@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/evaluation/performance_status",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:parentschema": [
         "/schema/surveillance"
     ],
@@ -9,7 +9,7 @@
     "type": "integer",
     "title": "Performance Status",
     "description": "ECOGのPerformance Status",
-    "anyOf": [
+    "oneOf": [
         {
             "const": 0,
             "title": "全く問題なく活動できる。<BR/>発病前と同じ日常生活が制限なく行える。"

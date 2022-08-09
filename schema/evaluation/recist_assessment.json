@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/evaluation/recist_assessment",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "object",
     "title": "治療効果",
@@ -17,7 +17,7 @@
         },
         "判定": {
             "type": "string",
-            "anyOf": [
+            "oneOf": [
                 {
                     "type":"string",
                     "enum": ["CR"],
