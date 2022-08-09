@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/record/flavor",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "type": "object",
     "title": "嗜好",
     "jesgo:unique": true,
@@ -9,6 +9,13 @@
         "喫煙": {
             "type": "object",
             "properties": {
+                "喫煙歴": {
+                    "type": "string",
+                    "enum": [
+                        "あり",
+                        "なし"
+                    ]
+                },
                 "喫煙開始年齢": {
                     "type": "integer",
                     "minimum": 0
