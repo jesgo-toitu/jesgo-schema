@@ -33,8 +33,8 @@ UI自動生成（使用ライブラリ：react-jsonschema-form）で作成して
 |25 | オプション：各学会への登録用データラベル表示 | 拡張 | jesgo:required | ["JSOG","JSGOE"] | 完了 | ○ |  | |
 |26 | オプション：非表示 | 拡張 | jesgo:ui:hidden |  | 完了 | ○ |  | |
 |27 | オプション：選択リストのスタイル指定 | 拡張 | jesgo:ui:listtype | list | 完了 | × |  | デフォルトのセレクトボックスはこれと同等のスタイル。|
-|28 |  | 拡張 |  | combo | 完了 | × | ○ | |
-|29 |  | 拡張 |  | suggestlist | 完了 | ○ |  | |
+|28 |  | 拡張 |  | combo | 完了 | ○ |  | |
+|29 |  | 拡張 |  | suggestlist | 完了 | × |  | |
 |30 |  | 拡張 |  | suggestcombo | 完了 | × |  | |
 |31 |  | 拡張 |  | buttons | 完了 | × |  | |
 |32 | オプション：サブスキーマタイトルの非表示 | 拡張 | jesgo:ui:hidetitle | - | 未 | × |  | ObjectFieldTemplete   でタイトルなしのテンプレートを作成し、そちらを適用すれば行けそう。     既存のテンプレート"TabItemFieldTemplate"を流用できるかもしれません。|
