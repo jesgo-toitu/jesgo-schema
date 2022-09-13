@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/common/staging",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "object",
     "title": "病期診断",
@@ -26,7 +26,8 @@
         },
         "FIGO": {
             "type": "string",
-            "title": "FIGO分類"
+            "title": "FIGO分類",
+            "jesgo:tag": "figo"
         },
         "cTNM": {
             "type": "object",
