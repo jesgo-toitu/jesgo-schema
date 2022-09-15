@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/staging",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "object",
     "title": "病期診断",
@@ -22,6 +22,7 @@
             "jesgo:ui:listtype": "suggestlist",
             "title": "FIGO分類(FIGO2008, 日産婦2011)",
             "description": "漿膜、付属器浸潤の場合にIIIA期とし、腹水細胞診陽性は進行期分類には用いない。",
+            "jesgo:tag": "figo",
             "enum": [
                 "I期(亜分類不明)",
                 "IA期",

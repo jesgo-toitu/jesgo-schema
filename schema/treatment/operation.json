@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "type": "object",
     "title": "手術療法",
     "jesgo:ui:subschemastyle": "tab",
@@ -9,7 +9,8 @@
         "手術日": {
             "type": "string",
             "format": "date",
-            "jesgo:set": "eventdate"
+            "jesgo:set": "eventdate",
+            "jesgo:tag": "treatment_surgery"
         },
         "手術時間": {
             "description": "加刀~終刀までの時間(分) もしくは 時:分 で入力",
