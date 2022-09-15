@@ -1,7 +1,6 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/supportive_care",
-    "jesgo:tag": "treatment_supportivecare",
     "jesgo:version": "1.1",
     "type": "object",
     "title": "緩和治療",
@@ -9,7 +8,8 @@
         "評価日": {
             "type": "string",
             "format": "date",
-            "jesgo:set": "eventdate"
+            "jesgo:set": "eventdate",
+            "jesgo:tag": "treatment_supportivecare"
         },
         "評価": {
             "type": "string",
