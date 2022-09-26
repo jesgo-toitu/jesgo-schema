@@ -7,7 +7,7 @@
     ],
     "jesgo:unique": true,
     "type": "integer",
-    "title": "Performance Status",
+    "title": "PerformanceStatus",
     "description": "ECOGのPerformance Status",
     "oneOf": [
         {
