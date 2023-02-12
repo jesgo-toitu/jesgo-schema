@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation_procedures",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "array",
     "title": "実施手術",
@@ -188,38 +188,17 @@
                     "jesgo:ui:visibleWhen": {
                         "properties": {
                             "術式": {
-                                "pattern": "^その他の"
+                                "enum": [
+                                    "その他の開腹手術",
+                                    "その他の腟式手術",
+                                    "その他の腹腔鏡手術",
+                                    "その他のロボット支援下手術"
+                                ]
                             }
-                        }
-                    }
-                },
-                "卵巣・卵管の状態": {
-                    "type": "object",
-                    "jesgo:ui:visibleWhen": {
-                        "properties": {
-                            "術式": {
-                                "pattern": "子宮全摘出術"
-                            }
-                        }
-                    },
-                    "properties": {
-                        "卵管": {
-                            "type": "string",
-                            "enum": [
-                                "摘出",
-                                "温存"
-                            ]
-                        },
-                        "卵巣": {
-                            "type": "string",
-                            "enum": [
-                                "摘出",
-                                "温存"
-                            ]
                         }
                     }
                 }
-            } 
+            }
         }
     }
 }
