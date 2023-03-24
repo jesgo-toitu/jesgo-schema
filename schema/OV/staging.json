@@ -150,7 +150,7 @@
         "cTNM": {
             "$id": "#cTNM",
             "type": "object",
-            "title": "cTMN分類",
+            "title": "cTNM分類",
             "properties": {
                 "T": {
                     "$ref": "#/$defs/T"
@@ -165,7 +165,7 @@
         },
         "pTNM": {
             "type": "object",
-            "title": "pTMN分類",
+            "title": "pTNM分類",
             "properties": {
                 "T": {
                     "$ref": "#/$defs/T"
@@ -195,7 +195,7 @@
         "ypTNM": {
             "$id": "#ypTNM",
             "type": "object",
-            "title": "ypTMN分類",
+            "title": "ypTNM分類",
             "properties": {
                 "T": {
                     "$ref": "#/$defs/T"

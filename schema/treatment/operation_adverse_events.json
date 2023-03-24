@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation_adverse_events",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.2",
     "title": "手術合併症",
     "type": "object",
     "jesgo:unique": false,
@@ -119,6 +119,7 @@
                     "出血量": {},
                     "発生した合併症": {
                         "type": "array",
+                        "jesgo:ui:listtype": "buttons",
                         "items": {
                             "type": "string",
                             "enum": [
@@ -151,6 +152,7 @@
                     "出血量": {},
                     "発生した合併症": {
                         "type": "array",
+                        "jesgo:ui:listtype": "buttons",
                         "items": {
                             "type": "string",
                             "enum": [
@@ -191,6 +193,7 @@
                     "出血量": {},
                     "発生した合併症": {
                         "type": "array",
+                        "jesgo:ui:listtype": "buttons",
                         "items": {
                             "type": "string",
                             "enum": [
@@ -227,6 +230,7 @@
                     "出血量": {},
                     "発生した合併症": {
                         "type": "array",
+                        "jesgo:ui:listtype": "buttons",
                         "items": {
                             "type": "string",
                             "enum": [
@@ -261,6 +265,7 @@
                     "関連する薬剤": {
                         "type": "array",
                         "$comment": "JSGOEではAE.*.Causeにマップ",
+                        "jesgo:ui:listtype": "buttons",
                         "items": {
                             "type": "string",
                             "enum": [
@@ -274,6 +279,7 @@
                     "発生した合併症": {
                         "type": "array",
                         "$comment": "JSGOEではAE.*.Titleにマップ",
+                        "jesgo:ui:listtype": "buttons",
                         "items": {
                             "type": "string",
                             "enum": [
@@ -305,6 +311,7 @@
                 "properties": {
                     "遺残したもの": {
                         "type": "array",
+                        "jesgo:ui:listtype": "buttons",
                         "items": {
                             "type": "string",
                             "enum": [
@@ -340,7 +347,7 @@
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "oneOf": [
+                            "anyOf": [
                                 {
                                     "type": "string",
                                     "enum": [
@@ -553,7 +560,7 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "oneOf": [
+                "anyOf": [
                     {
                         "type": "string",
                         "enum": [
@@ -668,7 +675,7 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "oneOf": [
+                "anyOf": [
                     {
                         "type": "string",
                         "enum": [
