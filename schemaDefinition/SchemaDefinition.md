@@ -54,6 +54,7 @@ UI自動生成（使用ライブラリ：react-jsonschema-form）で作成して
 |46 |  | 拡張 |  | week | 未 | × |  | |
 |47 |  | 拡張 |  | day | 未 | × |  | |
 |48 | オプション：独自エラーメッセージ | 拡張 | jesgo:validationalert | "メッセージ内容" | 完了 | × |  | |
+|49 | ユーザ利用禁止 | | jesgo:document_id | | | | | プラグインに出力されるドキュメントにのみ存在 |
 
 
 <div style="page-break-before:always"></div>
