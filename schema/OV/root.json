@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.2",
     "type": "object",
     "title": "患者台帳 卵巣がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -32,8 +32,9 @@
             "description": "漿液性卵管上皮内癌（STIC）の有無",
             "type": "string",
             "enum": [
+                "なし",
                 "あり",
-                "なし"
+                "検索せず"
             ]
         },
         "初回治療開始日": {

@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/chemotherapy",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.2",
     "title": "化学療法",
     "jesgo:copy": true,
     "type": "object",
@@ -22,6 +22,7 @@
                 "化学療法",
                 "分子標的薬",
                 "化学療法+分子標的治療",
+                "ホルモン治療",
                 "その他の治療"
             ]
         },

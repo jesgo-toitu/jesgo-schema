@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/findings",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "object",
     "title": "診断所見",
@@ -152,7 +152,7 @@
                 }
             }
         },
-        "傍大動脈リンパ節": {
+        "傍大動脈リンパ節転移": {
             "type": "object",
             "jesgo:ui:subschemastyle": "inline",
             "properties": {
@@ -171,8 +171,7 @@
                         "画像診断―MRI",
                         "画像診断―CT",
                         "画像診断―PET/CT",
-                        "病理診断",
-                        "その他"
+                        "病理診断"
                     ]
                 }
             }
@@ -196,8 +195,7 @@
                         "画像診断―MRI",
                         "画像診断―CT",
                         "画像診断―PET/CT",
-                        "病理診断",
-                        "その他"
+                        "病理診断"
                     ]
                 }
             }
