@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation_adverse_events",
-    "jesgo:version": "1.2",
+    "jesgo:version": "1.3",
     "title": "手術合併症",
     "type": "object",
     "jesgo:unique": false,
@@ -156,13 +156,13 @@
                         "items": {
                             "type": "string",
                             "enum": [
-                                "皮下気腫",
+                                "気腫",
                                 "ガス塞栓(炭酸ガス)",
                                 "ガス塞栓(空気)",
                                 "水中毒",
-                                "そのほか心臓障害",
-                                "そのほか呼吸器障害",
-                                "そのほか神経系障害",
+                                "その他 循環器系障害",
+                                "その他 呼吸器系障害",
+                                "その他 神経系障害",
                                 "上記以外"
                             ],
                             "minItems": 1
