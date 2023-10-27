@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/staging",
-    "jesgo:version": "2.0",
+    "jesgo:version": "2.1",
     "jesgo:unique": true,
     "type": "object",
     "title": "病期診断",
@@ -121,7 +121,7 @@
     "$defs": {
         "cTNM": {
             "type": "object",
-            "title": "cTNM分類(日産婦2020暫定版)",
+            "title": "cTNM分類(Cervix Uteri TNM 2021)",
             "description": "cTNM分類は、治療を開始する前に、内診・直腸診による局所所見に画像所見を加味して総合的に判断し報告する。<br>子宮頸部円錐切除術は臨床検査とみなし,これによる組織検査の結果は原則としてcTNM分類に入れる。",
             "jesgo:ui:subschemastyle": "row",
             "properties": {
@@ -142,7 +142,7 @@
             "jesgo:ui:subschemastyle": "row",
             "properties": {
                 "T": {
-                    "$ref": "#/$defs/T"
+                    "$ref": "#/$defs/pT"
                 },
                 "N": {
                     "$ref": "#/$defs/pN"
@@ -158,7 +158,7 @@
             "jesgo:ui:subschemastyle": "row",
             "properties": {
                 "T": {
-                    "$ref": "#/$defs/T"
+                    "$ref": "#/$defs/pT"
                 },
                 "N": {
                     "$ref": "#/$defs/pN"
@@ -175,32 +175,7 @@
             "jesgo:ui:subschemastyle": "inline",
             "properties": {
                 "T": {
-                    "type": "string",
-                    "enum": [
-                        "TX",
-                        "T0",
-                        "Tis",
-                        "T1(亜分類不明)",
-                        "T1a1:脈管侵襲なし",
-                        "T1a1:脈管侵襲あり",
-                        "T1a2:脈管侵襲なし",
-                        "T1a2:脈管侵襲あり",
-                        "T1a(亜分類不明):脈管侵襲なし",
-                        "T1a(亜分類不明):脈管侵襲あり",
-                        "T1b1",
-                        "T1b2",
-                        "T1b3",
-                        "T1b(亜分類不明)",
-                        "T2(亜分類不明)",
-                        "T2a1",
-                        "T2a2",
-                        "T2a(亜分類不明)",
-                        "T2b",
-                        "T3(亜分類不明)",
-                        "T3a",
-                        "T3b",
-                        "T4"
-                    ]
+                    "$ref": "#/$defs/classificationT"
                 }
             },
             "if": {
@@ -222,6 +197,74 @@
                     }
                 }
             }
+        },
+        "pT": {
+            "$id": "#pT",
+            "type": "object",
+            "title": "T分類",
+            "jesgo:ui:subschemastyle": "inline",
+            "properties": {
+                "T": {
+                    "$ref": "#/$defs/classificationT"
+                }
+            },
+            "if": {
+                "properties": {
+                    "T": {
+                        "pattern": "^T1a.*"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "T1a期 詳細入力": {
+                        "type": "string",
+                        "enum": [
+                            "水平方向7mm以下",
+                            "水平方向7mmをこえる",
+                            "不明"
+                        ]
+                    },
+                    "T1a期 腫瘍の厚さ": {
+                        "type": "string",
+                        "enum": [
+                            "厚さが5mm以下",
+                            "厚さが5mmこえるが2cm以下",
+                            "腫瘍最大径が2cmをこえるが4cm以下",
+                            "腫瘍最大径が4cmをこえる"                           
+                        ]
+                    }
+                }
+            }
+        },
+        "classificationT": {
+            "$id": "#classificationT",
+            "type": "string",
+            "enum": [
+                "TX",
+                "T0",
+                "Tis",
+                "T1(亜分類不明)",
+                "T1a1:脈管侵襲なし",
+                "T1a1:脈管侵襲あり",
+                "T1a2:脈管侵襲なし",
+                "T1a2:脈管侵襲あり",
+                "T1a(亜分類不明):脈管侵襲なし",
+                "T1a(亜分類不明):脈管侵襲あり",
+                "T1b1",
+                "T1b2",
+                "T1b3",
+                "T1b(亜分類不明)",
+                "T2(亜分類不明)",
+                "T2a1",
+                "T2a2",
+                "T2a(亜分類不明)",
+                "T2b",
+                "T3(亜分類不明)",
+                "T3a",
+                "T3b",
+                "T4"
+            ]
         },
         "cN": {
             "$id": "#cN",
@@ -312,6 +355,8 @@
                             "M3: 腹膜播種",
                             "M4: 脳",
                             "M5: 骨",
+                            "M6: 子宮漿膜",
+                            "M7: 付属器",
                             "M9: 上記以外の実質臓器・組織"
                         ]
                     }
@@ -332,7 +377,7 @@
             "$id": "#M",
             "type": "string",
             "title": "遠隔転移の評価",
-            "description": "鼠径リンパ節転移や腹腔内病変は遠隔転移に含む。腟,骨盤漿膜,付属器への転移は遠隔転移から除外する。",
+            "description": "鼠径リンパ節転移や腹腔内病変、子宮漿膜、付属器への転移は遠隔転移に含む。腟,骨盤漿膜への転移は遠隔転移から除外する。",
             "enum": [
                 "遠隔転移なし",
                 "遠隔転移あり",
