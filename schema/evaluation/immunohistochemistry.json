@@ -1,6 +1,6 @@
 {
     "$schema": "../jesgo.json",
-    "$id": "/schema/evaluation/immunohistochemistry",
+    "$id": "/schema/evaluations/immunohistochemistry",
     "jesgo:version": "1.0",
     "jesgo:parentschema": [
         "/schema/surveillance"

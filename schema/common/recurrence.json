@@ -73,6 +73,6 @@
     },
     "jesgo:childschema": [
         "/schema/treatment/relapse_treatment",
-        "/schema/evaluation/*"
+        "/schema/evaluations/*"
     ]
 }
