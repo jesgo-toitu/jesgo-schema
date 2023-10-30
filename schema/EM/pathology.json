@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/pathology",
-    "jesgo:version": "1.0",
+    "jesgo:version": "2.0",
     "jesgo:unique": true,
     "type": "object",
     "title": "組織診断",
@@ -19,6 +19,9 @@
                 "混合癌", "未分化癌", "脱分化癌",
                 "癌肉腫", "扁平上皮癌",
                 "その他", "採取せず"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "その他組織型": {
@@ -31,7 +34,10 @@
         },
         "組織学的異型度": {
             "type": "string",
-            "enum": ["Grade 1", "Grade 2", "Grade 3", "異型度評価の対象に含まれない", "不明"]
+            "enum": ["Grade 1", "Grade 2", "Grade 3", "異型度評価の対象に含まれない", "不明"],
+            "jesgo:required": [
+                "JSOG"
+            ]
         }
     },
     "jesgo:childschema": [

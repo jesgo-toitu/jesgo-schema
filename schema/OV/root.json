@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "1.2",
+    "jesgo:version": "2.0",
     "type": "object",
     "title": "患者台帳 卵巣がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -26,6 +26,9 @@
                 "卵管癌、卵管境界悪性腫瘍",
                 "腹膜癌",
                 "卵巣・卵管・腹膜（分類不能）"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "STIC": {
@@ -35,6 +38,9 @@
                 "なし",
                 "あり",
                 "検索せず"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "初回治療開始日": {
