@@ -2,6 +2,7 @@
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/pathology",
     "jesgo:version": "1.2",
+    "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
     "title": "組織診断",
