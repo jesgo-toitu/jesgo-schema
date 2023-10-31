@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/staging",
-    "jesgo:version": "2.1",
+    "jesgo:version": "2.2",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -11,6 +11,9 @@
     "properties": {
         "手術状況": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "$comment": "この選択で進行期の記載が動的に変更される.",
             "enum": [
                 "初回手術施行",
@@ -21,6 +24,9 @@
         },
         "FIGO": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "jesgo:ui:listtype": "suggestlist",
             "title": "FIGO分類(FIGO2008, 日産婦2011)",
             "description": "漿膜、付属器浸潤の場合にIIIA期とし、腹水細胞診陽性は進行期分類には用いない。",
@@ -191,6 +197,9 @@
                     "properties": {
                         "転移状況": {
                             "type": "string",
+                            "jesgo:required": [
+                                "JSOG"
+                            ],
                             "enum": [
                                 "付属器転移を認めない",
                                 "付属器転移を認める",
@@ -204,6 +213,9 @@
                 },
                 "子宮漿膜浸潤": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "description": "漿膜の破綻がなくとも筋層をこえて漿膜直下の結合織に達しているものは漿膜浸潤とする。",
                     "enum": [
                         "子宮漿膜浸潤を認めない",
@@ -212,6 +224,9 @@
                     ]
                 },
                 "骨盤腹膜播種": {
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "type": "string",
                     "enum": [
                         "骨盤腹膜播種を認めない",
@@ -221,6 +236,9 @@
                 },
                 "子宮傍組織浸潤": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "子宮傍組織浸潤を認めない",
                         "子宮傍組織浸潤を認める",
@@ -229,6 +247,9 @@
                 },
                 "腟壁浸潤": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "腟壁浸潤を認めない",
                         "腟壁浸潤を認める",
@@ -237,6 +258,9 @@
                 },
                 "腹腔内播種": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "description": "骨盤腔内に位置していても虫垂、小腸、大網は骨盤外臓器として扱う。",
                     "enum": [
                         "腹腔内播種を認めない",
@@ -246,6 +270,9 @@
                 },
                 "膀胱または腸管粘膜浸潤": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "粘膜浸潤を認めない",
                         "粘膜浸潤を認める",
@@ -257,6 +284,9 @@
         "classificationT": {
             "$id": "#classificationT",
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "TX: 組織学的に子宮体癌と診断したが、その進行度の判定が何らかの障害で不能なもの。",
                 "T0: 臨床所見より子宮体癌と診断したが、原発巣より組織学的な癌の診断ができないもの(組織学的検索をせずに治療を始めたものを含む)。",
@@ -278,6 +308,9 @@
             "properties": {
                 "画像診断の計測手段": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "MRI",
                         "CT",
@@ -288,6 +321,9 @@
                 },
                 "NP": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "title": "骨盤リンパ節の所見",
                     "enum": [
                         "NPX: リンパ節転移を判定するための画像診断が行われなかったとき",
@@ -297,6 +333,9 @@
                 },
                 "NA": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "title": "傍大動脈リンパ節の所見",
                     "enum": [
                         "NAX: リンパ節転移を判定するための画像診断が行われなかったとき",
@@ -315,6 +354,9 @@
                 "RP": {
                     "title": "骨盤リンパ節に対する処置",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "骨盤リンパ節を摘出しなかった(病理学的索が行われなかった)",
                         "骨盤リンパ節の選択的郭清(生検)を行った",
@@ -325,6 +367,9 @@
                 "RPX": {
                     "title": "骨盤リンパ節の所見",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "RP1: 骨盤リンパ節の病理学的検索が行われなかったが、明らかな腫大を認めない",
                         "RP2: 骨盤リンパ節の病理学的検索が行われなかったが、明らかな腫大を認める",
@@ -335,6 +380,9 @@
                 "RA": {
                     "title": "傍大動脈リンパ節に対する処置",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "傍大動脈リンパ節を摘出しなかった(病理学的索が行われなかった)",
                         "傍大動脈リンパ節の選択的郭清(生検)を行った",
@@ -345,6 +393,9 @@
                 "RAX": {
                     "title": "傍大動脈リンパ節の所見",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "RA1: 傍大動脈リンパ節の病理学的検索が行われなかったが、明らかな腫大を認めない",
                         "RA2: 傍大動脈リンパ節の病理学的検索が行われなかったが、明らかな腫大を認める",
@@ -361,6 +412,9 @@
             "properties": {
                 "M": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "M0: 遠隔転移なし",
                         "M1: その他の遠隔転移の存在",

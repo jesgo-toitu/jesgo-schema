@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/pathology",
-    "jesgo:version": "1.2",
+    "jesgo:version": "1.3",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -10,6 +10,9 @@
     "properties": {
         "組織型": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "oneOf": [
                 {
                     "title": "上皮性腫瘍 (扁平上皮癌)",
@@ -102,6 +105,9 @@
                 "properties": {
                     "扁平上皮癌 詳細": {
                         "type": "string",
+                        "jesgo:required": [
+                            "JSOG"
+                        ],
                         "enum": [
                             "角化型扁平上皮癌（角化型パターン）",
                             "非角化型扁平上皮癌（非角化型パターン）",
@@ -132,6 +138,9 @@
                 "properties": {
                     "腺癌 詳細": {
                         "type": "string",
+                        "jesgo:required": [
+                            "JSOG"
+                        ],
                         "enum": [
                             "通常型内頸部腺癌",
                             "粘液性癌",

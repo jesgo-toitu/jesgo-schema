@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/findings",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.2",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -13,6 +13,9 @@
             "properties": {
                 "POLE変異": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "あり",
                         "なし",
@@ -21,6 +24,9 @@
                 },
                 "MMR/MSI": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "欠損/不安定",
                         "保持/安定",
@@ -29,6 +35,9 @@
                 },
                 "p53": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "description": "免疫組織化学、MSI検査、NGSやパネルを含む遺伝子検査など、方法にかかわらず判断できる範囲で入力する。",
                     "enum": [
                         "野生型",
@@ -41,6 +50,9 @@
         },
         "腹水細胞診": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "陽性",
                 "陰性",
@@ -56,6 +68,9 @@
             "properties": {
                 "所見": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "浸潤なし",
                         "浸潤＜1/2",
@@ -65,6 +80,9 @@
                 },
                 "診断方法": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "初回手術施行による病理学的診断",
                         "MRI",

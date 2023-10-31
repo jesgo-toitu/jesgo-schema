@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/staging",
-    "jesgo:version": "2.1",
+    "jesgo:version": "2.2",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -10,6 +10,9 @@
     "properties": {
         "治療施行状況": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "初回手術施行",
                 "術前治療後に手術施行",
@@ -23,6 +26,9 @@
             "jesgo:ui:listtype": "suggestlist",
             "title": "FIGO分類(FIGO2018, 日産婦2020)",
             "jesgo:tag": "figo",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "I期(亜分類不明)",
                 "IA1期",
@@ -190,6 +196,9 @@
                 "properties": {
                     "T1a期 詳細入力": {
                         "type": "string",
+                        "jesgo:required": [
+                            "JSOG"
+                        ],
                         "enum": [
                             "水平方向7mm以下",
                             "水平方向7mmをこえる",
@@ -220,6 +229,9 @@
                 "properties": {
                     "T1a期 詳細入力": {
                         "type": "string",
+                        "jesgo:required": [
+                            "JSOG"
+                        ],
                         "enum": [
                             "水平方向7mm以下",
                             "水平方向7mmをこえる",
@@ -228,6 +240,9 @@
                     },
                     "T1a期 腫瘍の厚さ": {
                         "type": "string",
+                        "jesgo:required": [
+                            "JSOG"
+                        ],
                         "enum": [
                             "厚さが5mm以下",
                             "厚さが5mmこえるが2cm以下",
@@ -241,6 +256,9 @@
         "classificationT": {
             "$id": "#classificationT",
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "TX",
                 "T0",
@@ -275,6 +293,9 @@
             "properties": {
                 "N": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "領域リンパ節転移なし",
                         "骨盤リンパ節のみに転移を認める",
@@ -294,6 +315,9 @@
                 "RP": {
                     "title": "骨盤リンパ節に対する処置",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "骨盤リンパ節を摘出しなかった(病理学的索が行われなかった)",
                         "骨盤リンパ節の選択的郭清(生検)を行った",
@@ -304,6 +328,9 @@
                 "RPX": {
                     "title": "骨盤リンパ節の所見",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "RP1: 骨盤リンパ節の病理学的検索が行われなかったが、明らかな腫大を認めない",
                         "RP2: 骨盤リンパ節の病理学的検索が行われなかったが、明らかな腫大を認める",
@@ -314,6 +341,9 @@
                 "RA": {
                     "title": "傍大動脈リンパ節に対する処置",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "傍大動脈リンパ節を摘出しなかった(病理学的索が行われなかった)",
                         "傍大動脈リンパ節の選択的郭清(生検)を行った",
@@ -324,6 +354,9 @@
                 "RAX": {
                     "title": "傍大動脈リンパ節の所見",
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "RA1: 傍大動脈リンパ節の病理学的検索が行われなかったが、明らかな腫大を認めない",
                         "RA2: 傍大動脈リンパ節の病理学的検索が行われなかったが、明らかな腫大を認める",
@@ -377,6 +410,9 @@
         "M": {
             "$id": "#M",
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "title": "遠隔転移の評価",
             "description": "鼠径リンパ節転移や腹腔内病変、子宮漿膜、付属器への転移は遠隔転移に含む。腟,骨盤漿膜への転移は遠隔転移から除外する。",
             "enum": [

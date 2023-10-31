@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/pathology",
-    "jesgo:version": "1.2",
+    "jesgo:version": "1.3",
     "jesgo:valid": ["2023-09-01"],
     "type": "object",
     "title": "組織診断",
@@ -13,6 +13,9 @@
     "properties": {
         "組織型": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "oneOf": [
                 {
                     "title": "上皮性腫瘍",
