@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "1.4",
+    "jesgo:version": "2.1",
     "jesgo:valid": ["2023-09-01"],
     "type": "object",
     "title": "患者台帳 卵巣がん",
@@ -22,15 +22,15 @@
         },
         "診断": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "卵巣癌、卵巣境界悪性腫瘍",
                 "卵管癌、卵管境界悪性腫瘍",
                 "卵管・卵巣癌",
                 "腹膜癌",
                 "卵巣・卵管・腹膜（分類不能）"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "病変の主座": {
@@ -48,13 +48,13 @@
         "STIC": {
             "description": "漿液性卵管上皮内癌（STIC）の有無。<br>SEE-FIMプロトコールないしは、それに準じた検索を行わなかった場合に、「検索せず」を選択する。",
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "なし",
                 "あり",
                 "検索せず"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "遺伝子プロファイル": {

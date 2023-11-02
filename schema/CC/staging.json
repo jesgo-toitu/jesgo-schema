@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/staging",
-    "jesgo:version": "2.2",
+    "jesgo:version": "2.3",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -10,14 +10,14 @@
     "properties": {
         "治療施行状況": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "初回手術施行",
                 "術前治療後に手術施行",
                 "手術未施行",
                 "手術療法、化学療法、放射線療法を実施せず"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ],
             "description": "術前に放射線治療や化学療法を施行した症例は「術前治療施行例」となり、ypTNMとして手術時所見に即してpTNM分類を入力する。"
         },
@@ -26,9 +26,6 @@
             "jesgo:ui:listtype": "suggestlist",
             "title": "FIGO分類(FIGO2018, 日産婦2020)",
             "jesgo:tag": "figo",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "I期(亜分類不明)",
                 "IA1期",
@@ -54,6 +51,9 @@
                 "IV期(亜分類不明)",
                 "IVA期",
                 "IVB期"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "cTNM": {
@@ -293,16 +293,16 @@
             "properties": {
                 "N": {
                     "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
                     "enum": [
                         "領域リンパ節転移なし",
                         "骨盤リンパ節のみに転移を認める",
                         "傍大動脈リンパ節のみに転移を認める",
                         "骨盤および傍大動脈リンパ節転移を認める",
                         "画像診断をしなかった"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -315,54 +315,54 @@
                 "RP": {
                     "title": "骨盤リンパ節に対する処置",
                     "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
                     "enum": [
                         "骨盤リンパ節を摘出しなかった(病理学的索が行われなかった)",
                         "骨盤リンパ節の選択的郭清(生検)を行った",
                         "骨盤リンパ節の系統的郭清を行った",
                         "センチネルリンパ節生検を行った"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "RPX": {
                     "title": "骨盤リンパ節の所見",
                     "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
                     "enum": [
                         "RP1: 骨盤リンパ節の病理学的検索が行われなかったが、明らかな腫大を認めない",
                         "RP2: 骨盤リンパ節の病理学的検索が行われなかったが、明らかな腫大を認める",
                         "RP3: 骨盤リンパ節を摘出し、病理学的に転移を認めない",
                         "RP4: 骨盤リンパ節を摘出し、転移を認める"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "RA": {
                     "title": "傍大動脈リンパ節に対する処置",
                     "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
                     "enum": [
                         "傍大動脈リンパ節を摘出しなかった(病理学的索が行われなかった)",
                         "傍大動脈リンパ節の選択的郭清(生検)を行った",
                         "傍大動脈リンパ節の系統的郭清を行った",
                         "センチネルリンパ節生検を行った"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "RAX": {
                     "title": "傍大動脈リンパ節の所見",
                     "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
                     "enum": [
                         "RA1: 傍大動脈リンパ節の病理学的検索が行われなかったが、明らかな腫大を認めない",
                         "RA2: 傍大動脈リンパ節の病理学的検索が行われなかったが、明らかな腫大を認める",
                         "RA3: 傍大動脈リンパ節を摘出し、病理学的に転移を認めない",
                         "RA4: 傍大動脈リンパ節を摘出し、転移を認める"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -410,15 +410,15 @@
         "M": {
             "$id": "#M",
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "title": "遠隔転移の評価",
             "description": "鼠径リンパ節転移や腹腔内病変、子宮漿膜、付属器への転移は遠隔転移に含む。腟,骨盤漿膜への転移は遠隔転移から除外する。",
             "enum": [
                 "遠隔転移なし",
                 "遠隔転移あり",
                 "遠隔転移の判定不十分なとき"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         }
     }

@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/findings",
-    "jesgo:version": "1.2",
+    "jesgo:version": "2.1",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -50,14 +50,14 @@
         },
         "腹水細胞診": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "陽性",
                 "陰性",
                 "未施行",
                 "不明"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "筋層浸潤": {
@@ -68,26 +68,26 @@
             "properties": {
                 "所見": {
                     "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
                     "enum": [
                         "浸潤なし",
                         "浸潤＜1/2",
                         "浸潤≧1/2",
                         "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
                     ]
                 },
                 "診断方法": {
                     "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
                     "enum": [
                         "初回手術施行による病理学的診断",
                         "MRI",
                         "CT",
                         "PET/CT"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
                     ]
                 }
             }
@@ -99,14 +99,14 @@
         "/schema/evaluations/colposcopy",
         "/schema/evaluations/hysteroscopy",
         "/schema/evaluations/cystoscopy",
-        "/schema/evaluation/colonoscopy",
-        "/schema/evaluation/tumor_markers",
+        "/schema/evaluations/colonoscopy",
+        "/schema/evaluations/tumor_markers",
         "/schema/evaluations/imaging",
         "/schema/evaluations/ascites",
         "/schema/evaluations/pleural_effusion",
-        "/schema/evaluation/immunohistochemistry",
-        "/schema/evaluation/oncogenes",
-        "/schema/evaluation/performance_status",
-        "/schema/evaluation/physical_status"
+        "/schema/evaluations/immunohistochemistry",
+        "/schema/evaluations/oncogenes",
+        "/schema/evaluations/performance_status",
+        "/schema/evaluations/physical_status"
     ]
 }

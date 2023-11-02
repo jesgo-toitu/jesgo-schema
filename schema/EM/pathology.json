@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/pathology",
-    "jesgo:version": "1.2",
+    "jesgo:version": "2.1",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -10,9 +10,6 @@
     "properties": {
         "組織型": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "類内膜癌",
                 "扁平上皮への分化を伴う類内膜癌", "絨毛腺管型類内膜癌", "分泌型類内膜癌",
@@ -25,6 +22,9 @@
                 "中腎様腺癌", "神経内分泌腫瘍グレード1", "神経内分泌腫瘍グレード2", 
                 "混合型神経内分泌癌", "混合型小細胞神経内分泌癌", "混合型大細胞神経内分泌癌", 
                 "その他", "採取せず"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "その他組織型": {
@@ -37,10 +37,10 @@
         },
         "組織学的異型度": {
             "type": "string",
+            "enum": ["Grade 1", "Grade 2", "Grade 3", "異型度評価の対象に含まれない", "不明"],
             "jesgo:required": [
                 "JSOG"
-            ],
-            "enum": ["Grade 1", "Grade 2", "Grade 3", "異型度評価の対象に含まれない", "不明"]
+            ]
         },
         "脈管侵襲": {
             "type": "string",
@@ -55,8 +55,8 @@
         }
     },
     "jesgo:childschema": [
-        "/schema/evaluation/immunohistochemistry",
-        "/schema/evaluation/oncogenes",
+        "/schema/evaluations/immunohistochemistry",
+        "/schema/evaluations/oncogenes",
         "/schema/record/pathlogy_report"
     ]
 }

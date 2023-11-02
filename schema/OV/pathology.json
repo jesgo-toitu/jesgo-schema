@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/pathology",
-    "jesgo:version": "1.3",
+    "jesgo:version": "2.1",
     "jesgo:valid": ["2023-09-01"],
     "type": "object",
     "title": "組織診断",
@@ -13,9 +13,6 @@
     "properties": {
         "組織型": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "oneOf": [
                 {
                     "title": "上皮性腫瘍",
@@ -159,6 +156,9 @@
                         "組織型診断保留中"
                     ]
                 }
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "その他組織型": {
@@ -171,8 +171,8 @@
         }
     },
     "jesgo:childschema": [
-        "/schema/evaluation/immunohistochemistry",
-        "/schema/evaluation/oncogenes",
+        "/schema/evaluations/immunohistochemistry",
+        "/schema/evaluations/oncogenes",
         "/schema/record/pathlogy_report"
     ]
 }
