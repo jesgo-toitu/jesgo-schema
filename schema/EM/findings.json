@@ -1,11 +1,44 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/findings",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
+    "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
     "title": "診断所見",
     "properties": {
+        "分子遺伝学的プロファイル": {
+            "type": "object",
+            "jesgo:ui:subschemastyle": "inline",
+            "properties": {
+                "POLE変異": {
+                    "type": "string",
+                    "enum": [
+                        "あり",
+                        "なし",
+                        "不明"                        
+                    ]
+                },
+                "MMR/MSI": {
+                    "type": "string",
+                    "enum": [
+                        "欠損/不安定",
+                        "保持/安定",
+                        "不明"                        
+                    ]
+                },
+                "p53": {
+                    "type": "string",
+                    "description": "免疫組織化学、MSI検査、NGSやパネルを含む遺伝子検査など、方法にかかわらず判断できる範囲で入力する。",
+                    "enum": [
+                        "野生型",
+                        "過剰発現",
+                        "完全陰性",
+                        "不明"                                               
+                    ]
+                }
+            }
+        },
         "腹水細胞診": {
             "type": "string",
             "enum": [
