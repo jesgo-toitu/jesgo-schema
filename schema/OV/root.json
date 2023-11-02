@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "1.3",
+    "jesgo:version": "2.1",
     "jesgo:valid": ["2023-09-01"],
     "type": "object",
     "title": "患者台帳 卵巣がん",
@@ -28,10 +28,16 @@
                 "卵管・卵巣癌",
                 "腹膜癌",
                 "卵巣・卵管・腹膜（分類不能）"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "病変の主座": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "卵巣",
                 "卵管",
@@ -46,11 +52,17 @@
                 "なし",
                 "あり",
                 "検索せず"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "遺伝子プロファイル": {
             "description": "BRACAnalysis®またはMyChoiceTM診断システム、遺伝子パネル検査等を施行した結果を入力する。",
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "HRP ",
                 "BRCA1/2病的バリアント陽性",
