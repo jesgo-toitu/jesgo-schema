@@ -13,9 +13,6 @@
     "properties": {
         "手術状況": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "$comment": "この選択により進行期の記載が動的に変更される.",
             "enum": [
                 "初回手術施行",
@@ -29,9 +26,6 @@
         },
         "FIGO": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "jesgo:ui:listtype": "suggestlist",
             "title": "FIGO分類",
             "description": "手術進行期分類(日産婦2014、FIGO 2014)",
@@ -59,9 +53,6 @@
         "IIIA1期の場合": {},
         "所属リンパ節" : {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "jesgo:ui:listtype": "suggestlist",
             "title": "所属リンパ節",
             "enum": [
@@ -158,9 +149,6 @@
                 "properties": {
                     "IC期の場合": {
                         "type": "string",
-                        "jesgo:required": [
-                            "JSOG"
-                        ],
                         "enum": [
                             "1C1: 手術操作による被膜破綻",
                             "1C2: 自然被膜破綻あるいは被膜表面への浸潤",
@@ -185,9 +173,6 @@
                 "properties": {
                     "IIIA1期の場合": {
                         "type": "string",
-                        "jesgo:required": [
-                            "JSOG"
-                        ],
                         "enum": [
                             "3A11: 転移巣最大径10mm以下",
                             "3A12: 転移巣最大径10mmをこえる",
@@ -281,9 +266,6 @@
             "$id": "#T",
             "title": "T分類",
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "1a",
                 "1b",
@@ -306,9 +288,6 @@
             "title": "N分類",
             "description": "pNの決定は細胞診または組織診による。触診や画像診断上、腫大を認めただけではpN1とはしない。",
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "0: 所属リンパ節に転移を認めない",
                 "1a: 所属リンパ節に転移を認める(転移巣最大径10mm以下、組織所見による)",
@@ -324,9 +303,6 @@
             "$id": "#cN",
             "title": "N分類",
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "0: 所属リンパ節に転移を認めない",
                 "1: 所属リンパ節に転移を認める（画像所見などによる）",
@@ -339,9 +315,6 @@
         "M": {
             "$id": "#M",
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "title": "M分類",
             "enum": [
                 "0: 遠隔転移を認めない",
