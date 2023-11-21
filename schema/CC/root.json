@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/root",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.2",
     "type": "object",
     "title": "患者台帳 子宮頸がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -25,6 +25,7 @@
         "初回治療開始日": {
             "type": "string",
             "format": "date",
+            "jesgo:set": "eventdate",
             "jesgo:get": "initial_treatment",
             "jesgo:tag": "initial_treatment_date",
             "jesgo:required": [
