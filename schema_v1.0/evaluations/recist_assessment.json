@@ -1,6 +1,6 @@
 {
     "$schema": "../jesgo.json",
-    "$id": "/schema/evaluation/recist_assessment",
+    "$id": "/schema/evaluations/recist_assessment",
     "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "object",
