@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation/detailed",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.6",
     "type": "object",
     "title": "手術療法 詳細",
     "properties": {
@@ -95,8 +95,7 @@
                 "不完全摘出（残存腫瘍径が 1cm未満）",
                 "不完全摘出（残存腫瘍径が 1cm～2cm）",
                 "不完全摘出（2cmをこえる）",
-                "不明",
-                "施行せず"
+                "不明"
             ]
         },
         "残存腫瘍部位": {
