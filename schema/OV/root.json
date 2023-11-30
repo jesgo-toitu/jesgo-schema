@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "2.1",
+    "jesgo:version": "2.2",
     "jesgo:valid": ["2023-09-01"],
     "type": "object",
     "title": "患者台帳 卵巣がん",
@@ -45,42 +45,6 @@
                 "不明"
             ]
         },
-        "STIC": {
-            "description": "漿液性卵管上皮内癌（STIC）の有無。<br>SEE-FIMプロトコールないしは、それに準じた検索を行わなかった場合に、「検索せず」を選択する。",
-            "type": "string",
-            "enum": [
-                "なし",
-                "あり",
-                "検索せず"
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
-        },
-        "遺伝子プロファイル": {
-            "description": "BRACAnalysis®またはMyChoiceTM診断システム、遺伝子パネル検査等を施行した結果を入力する。",
-            "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
-            "enum": [
-                "HRP ",
-                "BRCA1/2病的バリアント陽性",
-                "HRDかつBRCA1/2病的バリアント陰性",
-                "HR不明かつBRCA1/2病的バリアント陰性",
-                "不明"                
-            ]
-        },
-        "初回治療開始日": {
-            "type": "string",
-            "format": "date",
-            "jesgo:set": "eventdate",
-            "jesgo:get": "initial_treatment",
-            "jesgo:tag": "initial_treatment_date",
-            "jesgo:required": [
-                "JSOG"
-            ]
-        },
         "診断日": {
             "type": "string",
             "format": "date",
@@ -95,6 +59,18 @@
                 "いいえ",
                 "はい"
             ],
+            "jesgo:required": [
+                "JSOG"
+            ]
+        },
+        "腫瘍登録番号": {},
+        "予後調査": {},
+        "初回治療開始日": {
+            "type": "string",
+            "format": "date",
+            "jesgo:set": "eventdate",
+            "jesgo:get": "initial_treatment",
+            "jesgo:tag": "initial_treatment_date",
             "jesgo:required": [
                 "JSOG"
             ]
@@ -124,21 +100,28 @@
                     "3年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "three_year_prognosis"
+                        "jesgo:tag": "three_year_prognosis",
+                        "jesgo:required": [
+                            "JSOG"
+                        ]
                     },
                     "5年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "five_year_prognosis"
+                        "jesgo:tag": "five_year_prognosis",
+                        "jesgo:required": [
+                            "JSOG"
+                        ]
                     }
-                }
+                },
+                "jesgo:ui:subschemastyle": "inline"
             }
         }
     },
     "jesgo:ui:subschemastyle": "tab",
     "jesgo:subschema": [
-        "/schema/OV/findings",
         "/schema/OV/staging",
+        "/schema/OV/findings",
         "/schema/OV/pathology",
         "/schema/treatment/initial_treatment"
     ]
