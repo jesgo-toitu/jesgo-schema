@@ -1,8 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/chemotherapy",
-    "jesgo:version": "1.4",
-    "title": "化学療法",
+    "jesgo:version": "1.5",
+    "title": "薬物療法",
     "jesgo:copy": true,
     "type": "object",
     "properties": {
@@ -136,15 +136,6 @@
                         "マイトマイシンC",
                         "アクチノマイシンD",
                         "ブレオマイシン"
-                    ]
-                },
-                {
-                    "title": "分子標的治療",
-                    "enum": [
-                        "血管新生阻害薬",
-                        "免疫チェックポイント阻害薬",
-                        "PARP阻害薬",
-                        "チロシンキナーゼ阻害薬"
                     ]
                 },
                 {
