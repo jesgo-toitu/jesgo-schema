@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/radiotherapy",
-    "jesgo:version": "2.0",
+    "jesgo:version": "2.1",
     "title": "放射線療法",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:copy": true,
@@ -32,6 +32,7 @@
         },
         "治療区分": {
             "type": "string",
+            "jesgo:required": [ "JSOG" ],
             "enum": [
                 "腔内照射",
                 "体外照射",
