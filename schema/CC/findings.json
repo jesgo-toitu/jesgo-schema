@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/findings",
-    "jesgo:version": "2.1",
+    "jesgo:version": "2.2",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "type": "object",
@@ -55,7 +55,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -83,7 +83,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -111,7 +111,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -139,7 +139,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -167,7 +167,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -198,7 +198,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -228,7 +228,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -258,7 +258,7 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
+                        "不明"
                     ],
                     "jesgo:required": [
                         "JSOG"
@@ -267,7 +267,7 @@
                 "診断方法": {
                     "type": "string",
                     "enum": [
-                        "視診・触診",
+                        "視触診",
                         "画像診断",
                         "病理診断"
                     ],
@@ -277,7 +277,7 @@
                 }
             }
         },
-        "再発リスク": {
+        "術後再発リスク": {
             "type": "string",
             "enum": [
                 "低リスク",
