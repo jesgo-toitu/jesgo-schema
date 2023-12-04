@@ -3,10 +3,16 @@
     "$id": "/schema/treatment/operation_procedures",
     "jesgo:version": "1.1",
     "jesgo:unique": true,
-    "type": "array",
+    "type": "object",
     "title": "実施手術",
-    "items": {
-        "$ref": "#/$defs/procedure"
+    "properties": {
+        "実施手術": {
+            "type": "array",
+            "description": "主たる術式を最初の行に配置してください.",
+            "items": {
+                "$ref": "#/$defs/procedure"
+            }
+        }
     },
     "$defs": {
         "procedure": {

@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/root",
-    "jesgo:version": "2.0",
+    "jesgo:version": "2.1",
     "type": "object",
     "title": "患者台帳 子宮頸がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -71,16 +71,23 @@
             "予後調査": {
                 "type": "object",
                 "description": "予後調査の登録日の入力をもって調査登録実施とします.",
+                "jesgo:ui:subschemastyle": "inline",
                 "properties": {
                     "3年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "three_year_prognosis"
+                        "jesgo:tag": "three_year_prognosis",
+                        "jesgo:required": [
+                            "JSOG"
+                        ]
                     },
                     "5年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "five_year_prognosis"
+                        "jesgo:tag": "five_year_prognosis",
+                        "jesgo:required": [
+                            "JSOG"
+                        ]
                     }
                 }
             }

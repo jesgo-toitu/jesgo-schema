@@ -1,11 +1,10 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/pathology",
-    "jesgo:version": "2.1",
+    "jesgo:version": "2.2",
     "jesgo:valid": ["2023-09-01"],
     "type": "object",
     "title": "組織診断",
-    "description": "WHO分類2014年",
     "jesgo:parentschema": [
         "/schema/OV/root"
     ],
@@ -75,10 +74,10 @@
                 {
                     "title": "胚細胞腫瘍",
                     "enum": [
-                        "未分化胚細胞腫/ディスジャーミノーマ",
+                        "未分化胚細胞腫",
                         "卵黄嚢腫瘍",
                         "胎芽性癌",
-                        "非妊娠性絨毛癌",
+                        "絨毛癌",
                         "未熟奇形腫G1",
                         "未熟奇形腫G2",
                         "未熟奇形腫G3",
@@ -161,15 +160,43 @@
                 "JSOG"
             ]
         },
-        "その他組織型": {
+        "その他組織型": {},
+        "遺伝子プロファイル": {
+            "description": "BRACAnalysis®またはMyChoiceTM診断システム、遺伝子パネル検査等を施行した結果を入力する。",
             "type": "string",
-            "jesgo:ui:visibleWhen": {
+            "jesgo:required": [
+                "JSOG"
+            ],
+            "enum": [
+                "HRP ",
+                "BRCA1/2病的バリアント陽性",
+                "HRDかつBRCA1/2病的バリアント陰性",
+                "HR不明かつBRCA1/2病的バリアント陰性",
+                "不明"                
+            ]
+        }
+    },
+    "allOf": [
+        {
+            "if": {
                 "properties": {
-                    "組織型": "その他の腫瘍"
+                    "組織型": {
+                        "enum": [
+                            "その他の腫瘍",
+                            "組織型診断保留中"
+                        ]
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "その他組織型": {
+                        "type": "string"
+                    }
                 }
             }
         }
-    },
+    ],
     "jesgo:childschema": [
         "/schema/evaluations/immunohistochemistry",
         "/schema/evaluations/oncogenes",
