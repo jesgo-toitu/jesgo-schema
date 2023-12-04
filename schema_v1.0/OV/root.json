@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "1.5",
+    "jesgo:version": "1.6",
     "type": "object",
     "title": "患者台帳 卵巣がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -26,15 +26,6 @@
                 "卵管癌、卵管境界悪性腫瘍",
                 "腹膜癌",
                 "卵巣・卵管・腹膜（分類不能）"
-            ]
-        },
-        "STIC": {
-            "description": "漿液性卵管上皮内癌（STIC）の有無。<br>SEE-FIMプロトコールないしは、それに準じた検索を行わなかった場合に、「検索せず」を選択する。",
-            "type": "string",
-            "enum": [
-                "なし",
-                "あり",
-                "検索せず"
             ]
         },
         "初回治療開始日": {
@@ -110,8 +101,8 @@
     },
     "jesgo:ui:subschemastyle": "tab",
     "jesgo:subschema": [
-        "/schema/OV/findings",
         "/schema/OV/staging",
+        "/schema/OV/findings",
         "/schema/OV/pathology",
         "/schema/treatment/initial_treatment"
     ]

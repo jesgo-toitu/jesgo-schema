@@ -1,7 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/common/root",
-    "jesgo:version": "1.1",
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2023-09-01"],
     "type": "object",
     "title": "患者台帳 (その他)",
     "$comment": "腫瘍登録の最低限の雛型",

@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/root",
-    "jesgo:version": "2.0",
+    "jesgo:version": "2.1",
     "type": "object",
     "title": "患者台帳 子宮体がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",

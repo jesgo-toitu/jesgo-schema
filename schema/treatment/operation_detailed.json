@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation/detailed",
-    "jesgo:version": "1.5",
+    "jesgo:version": "1.6",
     "jesgo:valid": ["2023-09-02"],
     "type": "object",
     "title": "手術療法 詳細",
@@ -97,11 +97,12 @@
         },
         "手術完遂度": {
             "type": "string",
+            "description": "試験開腹術の場合は不完全摘出を選択して下さい",
             "enum": [
                 "完全摘出",
                 "不完全摘出（残存腫瘍径が 1cm未満）",
                 "不完全摘出（残存腫瘍径が 1cm～2cm）",
-                "不完全摘出（2cmをこえる）",
+                "不完全摘出（2cmを超える）",
                 "不明"
             ]
         },
@@ -151,6 +152,7 @@
         },
         "合併症の有無": {
             "type": "string",
+            "jesgo:tag": "has_complications",
             "enum": [
                 "なし",
                 "あり"

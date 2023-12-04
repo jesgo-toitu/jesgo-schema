@@ -1,0 +1,19 @@
+{
+    "$schema": "../jesgo.json",
+    "$id": "/schema/OV/interperitoneal_detail",
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2023-09-01"],
+    "type": "object",
+    "title": "腹腔内所見詳細",
+    "jesgo:unique": true,
+    "properties": {
+        "骨盤内臓器進展": {
+            "type": "string",
+            "jesgo:ui:textarea": true
+        },
+        "腹腔内臓器進展": {
+            "type": "string",
+            "jesgo:ui:textarea": true
+        }
+    }
+}
