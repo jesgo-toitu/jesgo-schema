@@ -78,6 +78,7 @@
             "予後調査": {
                 "type": "object",
                 "description": "予後調査の登録日の入力をもって調査登録実施とします.",
+                "jesgo:ui:subschemastyle": "inline",
                 "properties": {
                     "3年": {
                         "type": "string",
@@ -95,8 +96,7 @@
                             "JSOG"
                         ]
                     }
-                },
-                "jesgo:ui:subschemastyle": "inline"
+                }
             }
         }
     },
