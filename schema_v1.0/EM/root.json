@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/root",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.2",
     "type": "object",
     "title": "患者台帳 子宮体がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -75,14 +75,21 @@
                     "3年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "three_year_prognosis"
+                        "jesgo:tag": "three_year_prognosis",
+                        "jesgo:required": [
+                            "JSOG"
+                        ]
                     },
                     "5年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "five_year_prognosis"
+                        "jesgo:tag": "five_year_prognosis",
+                        "jesgo:required": [
+                            "JSOG"
+                        ]
                     }
-                }
+                },
+                "jesgo:ui:subschemastyle": "inline"
             }
         }
     },

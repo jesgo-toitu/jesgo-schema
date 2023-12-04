@@ -1,11 +1,29 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/findings",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "type": "object",
-    "title": "術中腹腔内所見",
+    "title": "診断所見",
     "jesgo:unique": true,
     "properties": {
+        "漿液性卵管上皮内癌（STIC）": {
+            "description": "漿液性卵管上皮内癌（STIC）の有無。<br>SEE-FIMプロトコールないしは、それに準じた検索を行わなかった場合に、「検索せず」を選択する。",
+            "type": "string",
+            "enum": [
+                "なし",
+                "あり",
+                "検索せず"
+            ]
+        },
+        "腹水細胞診": {
+            "type": "string",
+            "enum": [
+                "陽性",
+                "陰性",
+                "未施行",
+                "不明"
+            ]
+        },
         "皮膜破綻の有無": {
             "type": "string",
             "enum": [
@@ -13,18 +31,6 @@
                 "あり",
                 "不明"
             ]
-        },
-        "腹腔細胞診": {
-            "type": "string",
-            "jesgo:ui:textarea": true
-        },
-        "骨盤内臓器進展": {
-            "type": "string",
-            "jesgo:ui:textarea": true
-        },
-        "腹腔内臓器進展": {
-            "type": "string",
-            "jesgo:ui:textarea": true
         }
     },
     "jesgo:childschema": [
@@ -41,6 +47,7 @@
         "/schema/evaluations/immunohistochemistry",
         "/schema/evaluations/oncogenes",
         "/schema/evaluations/performance_status",
-        "/schema/evaluations/physical_status"
+        "/schema/evaluations/physical_status",
+        "/schema/OV/interperitoneal_detail"
     ]
 }
