@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/pathology",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "object",
     "title": "組織診断",
@@ -21,14 +21,7 @@
                 "その他", "採取せず"
             ]
         },
-        "その他組織型": {
-            "type": "string",
-            "jesgo:ui:visibleWhen": {
-                "properties": {
-                    "組織型": "その他"
-                }
-            }
-        },
+        "その他組織型": {},
         "組織学的異型度": {
             "type": "string",
             "enum": ["Grade 1", "Grade 2", "Grade 3", "異型度評価の対象に含まれない", "不明"]
@@ -38,5 +31,19 @@
         "/schema/evaluations/immunohistochemistry",
         "/schema/evaluations/oncogenes",
         "/schema/record/pathlogy_report"
-    ]
+    ],
+    "if": {
+        "properties": {
+            "組織型": "その他"
+        }
+    },
+    "then": {
+        "properties": {
+            "その他組織型": {
+                "type": "string",
+                "jesgo:ui:textarea": 1
+
+            }    
+        }
+    }
 }

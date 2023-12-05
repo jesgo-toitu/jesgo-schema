@@ -43,16 +43,18 @@
                 "$ref": "#/$defs/radiotherapy"
             }
         },
-        "同時化学療法": {
-            "type": "object",
-            "jesgo:ui:visibleWhen": {
-                "properties": {
-                    "治療区分": {
-                        "pattern": "^同時化学放射線治療"
-                    }
-                }
-            },
-            "properties": {
+        "同時化学療法": {}
+    },
+    "if": {
+        "properties": {
+            "治療区分": {
+                "pattern": "^同時化学放射線治療"
+            }
+        }
+    },
+    "then": {
+        "properties": {
+            "同時化学療法": {
                 "レジメン": {
                     "type": "string"
                 },
@@ -82,7 +84,7 @@
                         "jesgo:ui:subschemastyle": "inline"
                     }
                 }
-            }
+            }    
         }
     },
     "$defs": {

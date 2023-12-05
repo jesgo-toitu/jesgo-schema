@@ -206,18 +206,19 @@
                 "M": {
                     "$ref": "#/$defs/M"
                 },
-                "遠隔転移部位": {
-                    "$ref": "#/$defs/locations",
-                    "jesgo:ui:visibleWhen": {
-                        "properties": {
-                            "pTNM": {
-                                "properties": {
-                                    "M": {
-                                        "pattern": "^1"
-                                    }
-                                }
-                            }
-                        }
+                "遠隔転移部位": {}
+            },
+            "if": {
+                "properties": {
+                    "M": {
+                        "pattern": "^1"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "遠隔転移部位": {
+                        "$ref": "#/$defs/locations"
                     }
                 }
             }
@@ -236,18 +237,19 @@
                 "M": {
                     "$ref": "#/$defs/M"
                 },
-                "遠隔転移部位": {
-                    "$ref": "#/$defs/locations",
-                    "jesgo:ui:visibleWhen": {
-                        "properties": {
-                            "ypTNM": {
-                                "properties": {
-                                    "M": {
-                                        "pattern": "^1"
-                                    }
-                                }
-                            }
-                        }
+                "遠隔転移部位": {}
+            },
+            "if": {
+                "properties": {
+                    "M": {
+                        "pattern": "^1"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "遠隔転移部位": {
+                        "$ref": "#/$defs/locations"
                     }
                 }
             }

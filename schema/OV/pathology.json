@@ -201,5 +201,18 @@
         "/schema/evaluations/immunohistochemistry",
         "/schema/evaluations/oncogenes",
         "/schema/record/pathlogy_report"
-    ]
+    ],
+    "if": {
+        "properties": {
+            "組織型": "その他の腫瘍"
+        }
+    },
+    "then": {
+        "properties": {
+            "その他組織型": {
+                "type": "string",
+                "jesgo:ui:textarea": 1
+            }    
+        }
+    }
 }
