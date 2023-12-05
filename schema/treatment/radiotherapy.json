@@ -1,8 +1,9 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/radiotherapy",
-    "jesgo:version": "1.1",
+    "jesgo:version": "2.0",
     "title": "放射線療法",
+    "jesgo:valid": ["2023-09-01"],
     "jesgo:copy": true,
     "type": "object",
     "properties": {
@@ -16,8 +17,22 @@
             "type": "string",
             "format": "date"
         },
+        "治療目的": {
+            "type": "string",
+            "enum": [
+                "術前治療",
+                "術中治療",
+                "術後治療",
+                "根治的治療",
+                "緩和的治療",
+                "その他"
+            ]        
+        },
+        "その他治療目的": {
+        },
         "治療区分": {
             "type": "string",
+            "jesgo:required": [ "JSOG" ],
             "enum": [
                 "腔内照射",
                 "体外照射",
@@ -28,63 +43,81 @@
                 "核医学治療"
             ]
         },
-        "治療目的": {
-            "type": "string",
-            "enum": [
-                "術前治療",
-                "術後治療",
-                "根治的治療",
-                "緩和的治療"
-            ]
-        },
-        "照射内容": {
+        "治療内容": {
             "type": "array",
             "items": {
                 "$ref": "#/$defs/radiotherapy"
             }
         },
-        "同時化学療法": {
-            "type": "object",
-            "jesgo:ui:visibleWhen": {
+        "同時化学療法": {}
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "治療目的": {
+                        "const": "その他"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "その他治療目的": {
+                        "type": "string",
+                        "jesgo:ui:textarea": 1
+                    }
+                }
+            }        
+        },
+        {
+            "if": {
                 "properties": {
                     "治療区分": {
                         "pattern": "^同時化学放射線治療"
                     }
                 }
             },
-            "properties": {
-                "レジメン": {
-                    "type": "string"
-                },
-                "治療情報": {
-                    "type": "array",
-                    "items": {
+            "then": {
+                "properties": {
+                    "同時化学療法": {
                         "type": "object",
                         "properties": {
-                            "薬剤名": {
-                                "$ref": "#/$defs/drugs"
-                            },
-                            "投与量": {
-                                "type": "number",
-                                "minimum": 0
-                            },
-                            "投与量の単位": {
+                            "レジメン": {
                                 "type": "string",
-                                "enum": [
-                                    "AUC",
-                                    "mg/㎡",
-                                    "mg/kg",
-                                    "mg/body",
-                                    "mg/日"
-                                ]
-                            }
-                        },
-                        "jesgo:ui:subschemastyle": "inline"
-                    }
+                                "jesgo:ui:textarea": 1
+                            },
+                            "治療情報": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "薬剤名": {
+                                            "$ref": "#/$defs/drugs"
+                                        },
+                                        "投与量": {
+                                            "type": "number",
+                                            "minimum": 0
+                                        },
+                                        "投与量の単位": {
+                                            "type": "string",
+                                            "enum": [
+                                                "AUC",
+                                                "mg/㎡",
+                                                "mg/kg",
+                                                "mg/body",
+                                                "mg/日"
+                                            ]
+                                        }
+                                    },
+                                    "jesgo:ui:subschemastyle": "inline"
+                                }
+                            }    
+                        }
+                    }    
                 }
-            }
+            }        
         }
-    },
+    ],
     "$defs": {
         "radiotherapy": {
             "$id": "#radiotherapy",
@@ -99,31 +132,129 @@
                     "type": "string",
                     "format": "date"
                 },
-                "照射方法": {
+                "照射内容": {
                     "type": "string",
-                    "enum": [
-                        "全骨盤照射",
-                        "全骨盤照射(中央遮蔽あり)",
-                        "リンパ節への体外照射",
-                        "3DCRT, IMRT, VMRTなど",
-                        "腔内照射",
-                        "組織内照射",
-                        "密封小線源治療",
-                        "核医学治療"
+                    "oneOf": [
+                        {
+                            "title": "外部照射",
+                            "enum": [
+                                "全骨盤照射",
+                                "遠隔転移"
+                            ]
+                        },
+                        {
+                            "title": "密封小線源療法",
+                            "enum": [
+                                "腔内照射",
+                                "組織内照射"
+                            ]
+                        },
+                        {
+                            "const": "核医学治療"
+                        }
                     ]
                 },
-                "照射線量": {
-                    "type": "number",
-                    "units": "Gy"
+                "照射技法": {
+                    "type": "string",
+                    "description": "1門照射・対向2門照射などの固定照射の場合は単純を選択してください.",
+                    "jesgo:ui:visibleWhen": {
+                        "properties": {
+                            "照射内容": {
+                                "enum": [
+                                    "全骨盤照射",
+                                    "遠隔転移"    
+                                ]
+                            }
+                        }
+                    },
+                    "enum": [
+                        "単純",
+                        "3D-CRT",
+                        "IMRT"
+                    ]
                 },
-                "核種": {
+                "線源": {
                     "type": "string",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射方法": {
-                                "const": "核医学治療"
+                            "照射内容": {
+                                "enum": [
+                                    "腔内照射",
+                                    "組織内照射",                                    
+                                    "核医学治療"
+                                ]
                             }
                         }
+                    }
+                },
+                "1回線量": {
+                    "type": "number",
+                    "units": "Gy",
+                    "jesgo:ui:visibleWhen": {
+                        "properties": {
+                            "照射内容": {
+                                "enum": [
+                                    "全骨盤照射",
+                                    "遠隔転移",
+                                    "腔内照射",
+                                    "組織内照射"
+                                ]
+                            }    
+                        }
+                    }
+                },
+                "分割回数": {
+                    "type": "number",
+                    "units": "回",
+                    "jesgo:ui:visibleWhen": {
+                        "properties": {
+                            "照射内容": {
+                                "enum": [
+                                    "全骨盤照射",
+                                    "遠隔転移",
+                                    "腔内照射",
+                                    "組織内照射"
+                                ]
+                            }    
+                        }
+                    }
+                },
+                "照射総線量": {
+                    "type": "number",
+                    "units": "Gy",
+                    "jesgo:ui:visibleWhen": {
+                        "properties": {
+                            "照射内容": {
+                                "enum": [
+                                    "全骨盤照射",
+                                    "遠隔転移",
+                                    "腔内照射",
+                                    "組織内照射"
+                                ]
+                            }    
+                        }
+                    }
+                },
+                "線源投与量": {
+                    "type": "number",
+                    "units": "MBq",
+                    "jesgo:ui:visibleWhen": {
+                        "properties": {
+                            "照射内容": {
+                                "const": "核医学治療"
+                            }    
+                        }                        
+                    }
+                },
+                "線源投与回数": {
+                    "type": "number",
+                    "units": "回",
+                    "jesgo:ui:visibleWhen": {
+                        "properties": {
+                            "照射内容": {
+                                "const": "核医学治療"
+                            }    
+                        }                        
                     }
                 }
             }
@@ -151,7 +282,7 @@
                         "ニムスチン",
                         "テモゾロミド",
                         "ブレオマイシン",
-                        "マイトマイシンC",
+                        ",マイトマイシンC",
                         "アクチノマイシンD"
                     ]
                 },
