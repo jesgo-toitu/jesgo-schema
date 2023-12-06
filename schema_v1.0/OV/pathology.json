@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/pathology",
-    "jesgo:version": "1.5",
+    "jesgo:version": "1.6",
     "type": "object",
     "title": "組織診断",
     "description": "WHO分類2014年",
@@ -169,7 +169,9 @@
     ],
     "if": {
         "properties": {
-            "組織型": "その他"
+            "組織型": {
+                "const": "その他"
+            }
         }
     },
     "then": {
