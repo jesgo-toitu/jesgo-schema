@@ -42,9 +42,7 @@
     "then": {
         "properties": {
             "その他組織型": {
-                "type": "string",
-                "jesgo:ui:textarea": 1
-
+                "type": "string"
             }    
         }
     }
