@@ -101,18 +101,12 @@
                     "3年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "three_year_prognosis",
-                        "jesgo:required": [
-                            "JSOG"
-                        ]
+                        "jesgo:tag": "three_year_prognosis"
                     },
                     "5年": {
                         "type": "string",
                         "format": "date",
-                        "jesgo:tag": "five_year_prognosis",
-                        "jesgo:required": [
-                            "JSOG"
-                        ]
+                        "jesgo:tag": "five_year_prognosis"
                     }
                 }
             }
