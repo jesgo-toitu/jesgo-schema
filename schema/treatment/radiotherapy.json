@@ -63,8 +63,7 @@
             "then": {
                 "properties": {
                     "その他治療目的": {
-                        "type": "string",
-                        "jesgo:ui:textarea": 1
+                        "type": "string"
                     }
                 }
             }        
