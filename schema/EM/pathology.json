@@ -97,19 +97,19 @@
             }
         }
     },
-            "if": {
-                "properties": {
-                    "組織型": {
-                        "const": "その他"
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "その他組織型": {
-                        "type": "string"
-                    }
-                }
+    "if": {
+        "properties": {
+            "組織型": {
+                "const": "その他"
+            }
+        }
+    },
+    "then": {
+        "properties": {
+            "その他組織型": {
+                "type": "string"
+            }
+        }
     },
     "jesgo:childschema": [
         "/schema/evaluations/immunohistochemistry",

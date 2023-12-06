@@ -176,22 +176,22 @@
             ]
         }
     },
-            "if": {
-                "properties": {
-                    "組織型": {
-                        "enum": [
-                            "その他の腫瘍",
-                            "組織型診断保留中"
-                        ]
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "その他組織型": {
-                        "type": "string"
-                    }
-                }
+    "if": {
+        "properties": {
+            "組織型": {
+                "enum": [
+                    "その他の腫瘍",
+                    "組織型診断保留中"
+                ]
+            }
+        }
+    },
+    "then": {
+        "properties": {
+            "その他組織型": {
+                "type": "string"
+            }
+        }
     },
     "jesgo:childschema": [
         "/schema/evaluations/immunohistochemistry",
