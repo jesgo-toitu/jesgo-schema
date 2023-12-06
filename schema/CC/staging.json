@@ -18,8 +18,7 @@
             ],
             "jesgo:required": [
                 "JSOG"
-            ],
-            "description": "術前に放射線治療や化学療法を施行した症例は「術前治療施行例」となり、ypTNMとして手術時所見に即してpTNM分類を入力する。"
+            ]
         },
         "FIGO": {
             "type": "string",
