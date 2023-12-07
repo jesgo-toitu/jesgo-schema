@@ -176,27 +176,24 @@
             ]
         }
     },
-    "allOf": [
-        {
-            "if": {
-                "properties": {
-                    "組織型": {
-                        "enum": [
-                            "その他の腫瘍",
-                            "組織型診断保留中"
-                        ]
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "その他組織型": {
-                        "type": "string"
-                    }
-                }
+    "if": {
+        "properties": {
+            "組織型": {
+                "enum": [
+                    "その他の腫瘍",
+                    "組織型診断保留中"
+                ]
             }
         }
-    ],
+    },
+    "then": {
+        "properties": {
+            "その他組織型": {
+                "type": "string",
+                "jesgo:ui:textarea": 1
+            }
+        }
+    },
     "jesgo:childschema": [
         "/schema/evaluations/immunohistochemistry",
         "/schema/evaluations/oncogenes",

@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/radiotherapy",
-    "jesgo:version": "2.1",
+    "jesgo:version": "2.0",
     "title": "放射線療法",
     "jesgo:valid": ["2023-09-01"],
     "jesgo:copy": true,
@@ -49,48 +49,74 @@
                 "$ref": "#/$defs/radiotherapy"
             }
         },
-        "同時化学療法": {
-            "type": "object",
-            "jesgo:ui:visibleWhen": {
+        "同時化学療法": {}
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "治療目的": {
+                        "const": "その他"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "その他治療目的": {
+                        "type": "string"
+                    }
+                }
+            }        
+        },
+        {
+            "if": {
                 "properties": {
                     "治療区分": {
                         "pattern": "^同時化学放射線治療"
                     }
                 }
             },
-            "properties": {
-                "レジメン": {
-                    "type": "string"
-                },
-                "治療情報": {
-                    "type": "array",
-                    "items": {
+            "then": {
+                "properties": {
+                    "同時化学療法": {
                         "type": "object",
-                        "jesgo:ui:subschemastyle": "inline",
                         "properties": {
-                            "薬剤名": {
-                                "$ref": "#/$defs/drugs"
-                            },
-                            "投与量": {
-                                "type": "number",
-                                "minimum": 0
-                            },
-                            "投与量の単位": {
+                            "レジメン": {
                                 "type": "string",
-                                "enum": [
-                                    "AUC",
-                                    "mg/㎡",
-                                    "mg/kg",
-                                    "mg/body",
-                                    "mg/日"
-                                ]
-                            }
+                                "jesgo:ui:textarea": 1
+                            },
+                            "治療情報": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "薬剤名": {
+                                            "$ref": "#/$defs/drugs"
+                                        },
+                                        "投与量": {
+                                            "type": "number",
+                                            "minimum": 0
+                                        },
+                                        "投与量の単位": {
+                                            "type": "string",
+                                            "enum": [
+                                                "AUC",
+                                                "mg/㎡",
+                                                "mg/kg",
+                                                "mg/body",
+                                                "mg/日"
+                                            ]
+                                        }
+                                    },
+                                    "jesgo:ui:subschemastyle": "inline"
+                                }
+                            }    
                         }
-                    }
+                    }    
                 }
-            }
+            }        
         }
-    },
+    ],
     "$defs": {
         "radiotherapy": {
             "$id": "#radiotherapy",
@@ -384,20 +410,6 @@
                     ]
                 }
             ]
-        }
-    },
-    "if": {
-        "properties": {
-            "治療目的": {
-                "const": "その他"
-            }
-        }
-    },
-    "then": {
-        "properties": {
-            "その他治療目的": {
-                "type": "string"
-            }
         }
     }
 }

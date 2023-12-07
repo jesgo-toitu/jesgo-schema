@@ -97,24 +97,21 @@
             }
         }
     },
-    "allOf": [
-        {
-            "if": {
-                "properties": {
-                    "組織型": {
-                        "const": "その他"
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "その他組織型": {
-                        "type": "string"
-                    }
-                }
+    "if": {
+        "properties": {
+            "組織型": {
+                "const": "その他"
             }
         }
-    ],
+    },
+    "then": {
+        "properties": {
+            "その他組織型": {
+                "type": "string",
+                "jesgo:ui:textarea": 1
+            }
+        }
+    },
     "jesgo:childschema": [
         "/schema/evaluations/immunohistochemistry",
         "/schema/evaluations/oncogenes",
