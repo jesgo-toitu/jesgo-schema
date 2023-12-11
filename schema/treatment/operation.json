@@ -86,6 +86,9 @@
         "合併症の有無": {
             "type": "string",
             "jesgo:tag": "has_complications",
+            "jesgo:required": [
+                "JSGOE"
+            ],
             "enum": [
                 "なし",
                 "あり"
