@@ -95,6 +95,30 @@
                 }
             ]
         },
+        "術式の選択": {
+            "type": "object",
+            "jesgo:ui:subschemastyle": "inline",
+            "properties": {
+                "様式": {
+                    "type": "string",
+                    "enum": [
+                        "一期的手術",
+                        "二期的手術",
+                        "その他"
+                    ]
+                },
+                "予定手術内容": {
+                    "type": "string",
+                    "description": "術中合併症あるいは術中所見に基づいて、開腹移行をしても、予定されていた術式を選択する。",
+                    "enum": [
+                        "開腹術",
+                        "腹腔鏡手術",
+                        "ロボット手術",
+                        "該当せず"
+                    ]
+                }
+            }
+        },
         "手術完遂度": {
             "type": "string",
             "description": "試験開腹術の場合は不完全摘出を選択して下さい",
@@ -105,10 +129,6 @@
                 "不完全摘出（2cmを超える）",
                 "不明"
             ]
-        },
-        "残存腫瘍部位": {
-            "type": "string",
-            "jesgo:ui:textarea": true
         },
         "腹腔内所見": {
             "type": "string",
@@ -151,6 +171,10 @@
                     ]
                 }
             }
+        },
+        "残存腫瘍部位": {
+            "type": "string",
+            "jesgo:ui:textarea": true
         },
         "合併症の有無": {
             "type": "string",
