@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation_adverse_events",
-    "jesgo:version": "1.5",
+    "jesgo:version": "1.6",
     "title": "手術合併症",
     "type": "object",
     "jesgo:unique": false,
@@ -375,198 +375,98 @@
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "anyOf": [
+                            "oneOf": [
                                 {
-                                    "type": "string",
                                     "enum": [
-                                        "出血"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "出血",                                         
                                         "血腫"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "創部感染"
+                                        "創部感染",
+                                        "創離開",
+                                        "腟断端部離開",
+                                        "メッシュ露出"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "創離開"
+                                        "腹膜炎",
+                                        "子宮感染",
+                                        "卵管・卵巣感染",
+                                        "メッシュ感染"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "腟断端部離開"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "腹膜炎"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "子宮感染"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "卵管・卵巣感染"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "イレウス"
-                                    ],
-                                    "title": "イレウス(腸管麻痺)"
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "消化管穿孔",
+                                        "イレウス",
                                         "腸閉塞"
-                                    ],
-                                    "title": "腸閉塞(機械的閉塞・絞扼性イレウス)"
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "消化管穿孔"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
                                         "腹壁瘢痕・ポートサイトヘルニア"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "尿管損傷"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "尿路閉塞"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "膀胱損傷"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "尿管損傷",
+                                        "尿路閉塞",
+                                        "膀胱損傷",
                                         "その他 尿路系障害"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "肺動脈血栓塞栓症"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "深部静脈血栓症"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "心肺停止"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "肺動脈血栓塞栓症",
+                                        "深部静脈血栓症",
+                                        "心肺停止",
                                         "その他 循環器系障害"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "気胸"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "気胸",
                                         "その他 呼吸器系障害"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "コンパートメント症候群"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "コンパートメント症候群",
                                         "その他 骨軟部系障害"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "上肢神経障害"
+                                        "上肢神経障害",
+                                        "下肢神経障害",
+                                        "その他 神経系障害"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "下肢神経障害"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "リンパ浮腫"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "非感染性リンパ嚢胞"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "リンパ浮腫",
+                                        "非感染性リンパ嚢胞",
                                         "感染性リンパ嚢胞・後腹膜膿瘍"
                                     ]
                                 },
                                 {
-                                    "type": "string",
+                                    "title": "──",
                                     "enum": [
-                                        "子宮腔からの出血持続"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "子宮腔の癒着"
-                                    ]
-                                },
-                                {
-                                    "type": "string",
-                                    "enum": [
+                                        "子宮腔からの出血持続",
+                                        "子宮腔の癒着",
                                         "卵管閉塞"
                                     ]
                                 }
@@ -703,62 +603,34 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "anyOf": [
+                "oneOf": [
                     {
-                        "type": "string",
                         "enum": [
-                            "子宮"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
-                            "卵管"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
-                            "卵巣"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
+                            "子宮",
+                            "卵管",
+                            "卵巣",
                             "腟"
                         ]
                     },
                     {
-                        "type": "string",
+                        "title": "──",
                         "enum": [
-                            "膀胱"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
+                            "膀胱",
                             "尿管"
                         ]
                     },
                     {
-                        "type": "string",
+                        "title": "──",
                         "enum": [
                             "後腹膜"
                         ]
                     },
                     {
-                        "type": "string",
+                        "title": "──",
                         "enum": [
-                            "直腸"
-                        ],
-                        "title": "消化管(直腸)"
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
+                            "直腸",
                             "結腸"
-                        ],
-                        "title": "消化管(結腸)"
+                        ]
                     },
                     {
                         "type": "string",
@@ -768,62 +640,36 @@
                         "title": "消化管(その他)"
                     },
                     {
-                        "type": "string",
+                        "title": "──",
                         "enum": [
-                            "腹壁"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
-                            "腹壁血管"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
+                            "腹壁",
+                            "腹壁血管",
                             "皮下"
                         ]
                     },
                     {
-                        "type": "string",
+                        "title": "──",
                         "enum": [
-                            "動脈"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
-                            "静脈"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
-                            "大血管動脈"
-                        ]
-                    },
-                    {
-                        "type": "string",
-                        "enum": [
+                            "動脈",
+                            "静脈",
+                            "大血管動脈",
                             "大血管静脈"
                         ]
                     },
                     {
-                        "type": "string",
+                        "title": "──",
                         "enum": [
                             "神経"
                         ]
                     },
                     {
-                        "type": "string",
                         "enum": [
                             "骨格系"
                         ],
                         "title": "骨・骨膜・軟骨"
                     },
                     {
-                        "type": "string",
+                        "title": "──",
                         "enum": [
                             "上記にない部位"
                         ]
