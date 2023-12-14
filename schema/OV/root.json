@@ -69,6 +69,7 @@
             "type": "string",
             "format": "date",
             "jesgo:set": "eventdate",
+            "jesgo:inheriteventdate": "inherit",
             "jesgo:get": "initial_treatment",
             "jesgo:tag": "initial_treatment_date",
             "jesgo:required": [
