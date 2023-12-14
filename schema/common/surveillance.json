@@ -14,7 +14,8 @@
         "確認日": {
             "type": "string",
             "format": "date",
-            "jesgo:set": "eventdate"
+            "jesgo:set": "eventdate",
+            "jesgo:inheriteventdate": "clear"
         },
         "状態": {
             "type": "string",
