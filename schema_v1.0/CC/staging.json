@@ -5,6 +5,7 @@
     "jesgo:unique": true,
     "type": "object",
     "title": "病期診断",
+    "description":"FIGO分類には、初回手術施行例では手術により決定した進行期、術前治療後に手術施行例 や 手術未施行例では治療開始前に決定した進行期を入力して下さい。",
     "$comment": "子宮頸がんの病期診断.",
     "properties": {
         "治療施行状況": {
