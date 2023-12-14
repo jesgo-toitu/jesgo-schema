@@ -94,9 +94,6 @@
                 "properties": {
                     "扁平上皮癌 詳細": {
                         "type": "string",
-                        "jesgo:required": [
-                            "JSOG"
-                        ],
                         "enum": [
                             "角化型扁平上皮癌（角化型パターン）",
                             "非角化型扁平上皮癌（非角化型パターン）",
@@ -127,9 +124,6 @@
                 "properties": {
                     "腺癌 詳細": {
                         "type": "string",
-                        "jesgo:required": [
-                            "JSOG"
-                        ],
                         "enum": [
                             "通常型内頸部腺癌",
                             "粘液性癌",

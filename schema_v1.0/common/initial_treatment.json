@@ -4,7 +4,6 @@
     "jesgo:version": "1.0",
     "type": "object",
     "title": "初回治療",
-    "description": "初回治療情報.",
     "jesgo:unique": true,
     "properties": {
         "治療サマリー": {
