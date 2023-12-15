@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/relapse_treatment",
-    "jesgo:version": "1.1",
+    "jesgo:version": "1.2",
     "title": "再発治療",
     "jesgo:unique": true,
     "type": "object",
@@ -9,9 +9,6 @@
         "再発治療開始日": {
             "type": "string",
             "format": "date",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "jesgo:set": "eventdate",
             "jesgo:inheriteventdate": "clear",
             "$comment": "治療開始日が同じものは同時性重複癌としてマークされます."
