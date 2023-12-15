@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/staging",
-    "jesgo:version": "1.3",
+    "jesgo:version": "1.2",
     "jesgo:unique": true,
     "type": "object",
     "title": "病期診断",

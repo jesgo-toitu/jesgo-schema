@@ -1,8 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/staging",
-    "jesgo:version": "2.3",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "type": "object",
     "title": "病期診断",
     "$comment": "卵巣がんの病期診断.",

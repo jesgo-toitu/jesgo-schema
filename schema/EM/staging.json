@@ -1,8 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/staging",
-    "jesgo:version": "2.2",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "jesgo:unique": true,
     "type": "object",
     "title": "病期診断",
@@ -48,7 +48,7 @@
         }
     },
     "allOf": [
-                {
+        {
             "if": {
                 "properties": {
                     "治療施行状況": {

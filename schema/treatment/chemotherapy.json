@@ -1,8 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/chemotherapy",
-    "jesgo:version": "2.1",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "title": "薬物療法",
     "jesgo:copy": true,
     "type": "object",

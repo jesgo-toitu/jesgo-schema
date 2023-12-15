@@ -3,7 +3,7 @@
     "$id": "/schema/treatment/radiotherapy",
     "jesgo:version": "2.0",
     "title": "放射線療法",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:valid": ["2024-01-01"],
     "jesgo:copy": true,
     "type": "object",
     "properties": {

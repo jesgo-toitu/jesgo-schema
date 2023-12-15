@@ -1,8 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/findings/details",
-    "jesgo:version": "2.1",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "type": "object",
     "jesgo:unique": true,
     "title": "診断所見 詳細",
