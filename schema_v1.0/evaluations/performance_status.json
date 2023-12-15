@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/evaluations/performance_status",
-    "jesgo:version": "1.2",
+    "jesgo:version": "1.1",
     "jesgo:parentschema": [
         "/schema/surveillance"
     ],
