@@ -46,7 +46,6 @@
         "IIIA1期の場合": {},
         "領域リンパ節" : {
             "type": "string",
-            "jesgo:ui:listtype": "suggestlist",
             "title": "領域リンパ節",
             "enum": [
                 "腫大なし",
