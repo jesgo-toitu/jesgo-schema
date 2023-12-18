@@ -9,9 +9,6 @@
         "再発治療開始日": {
             "type": "string",
             "format": "date",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "jesgo:set": "eventdate",
             "jesgo:inheriteventdate": "clear",
             "$comment": "治療開始日が同じものは同時性重複癌としてマークされます."
