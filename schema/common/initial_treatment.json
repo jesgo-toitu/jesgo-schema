@@ -22,6 +22,6 @@
     "jesgo:childschema": [
         "/schema/treatment/supportive_care",
         "/schema/treatment/blood_transfusion",
-        "/schema/evaluation/recist_assessment"
+        "/schema/evaluations/recist_assessment"
     ]
 }
