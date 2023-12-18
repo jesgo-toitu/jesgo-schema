@@ -45,6 +45,17 @@
                 "不明"
             ]
         },
+        "初回治療開始日": {
+            "type": "string",
+            "format": "date",
+            "jesgo:set": "eventdate",
+            "jesgo:inheriteventdate": "inherit",
+            "jesgo:get": "initial_treatment",
+            "jesgo:tag": "initial_treatment_date",
+            "jesgo:required": [
+                "JSOG"
+            ]
+        },
         "診断日": {
             "type": "string",
             "format": "date",
@@ -64,18 +75,7 @@
             ]
         },
         "腫瘍登録番号": {},
-        "予後調査": {},
-        "初回治療開始日": {
-            "type": "string",
-            "format": "date",
-            "jesgo:set": "eventdate",
-            "jesgo:inheriteventdate": "inherit",
-            "jesgo:get": "initial_treatment",
-            "jesgo:tag": "initial_treatment_date",
-            "jesgo:required": [
-                "JSOG"
-            ]
-        }
+        "予後調査": {}
     },
     "if": {
         "properties": {
