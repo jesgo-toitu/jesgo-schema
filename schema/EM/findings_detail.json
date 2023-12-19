@@ -1,11 +1,53 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/findings/details",
-    "jesgo:version": "1.0",
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "type": "object",
     "jesgo:unique": true,
     "title": "診断所見 詳細",
     "properties": {
+        "分子遺伝学的プロファイル": {
+            "type": "object",
+            "jesgo:ui:subschemastyle": "inline",
+            "properties": {
+                "POLE変異": {
+                    "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
+                    "enum": [
+                        "あり",
+                        "なし",
+                        "不明"                        
+                    ]
+                },
+                "MMR/MSI": {
+                    "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
+                    "enum": [
+                        "欠損/不安定",
+                        "保持/安定",
+                        "不明"                        
+                    ]
+                },
+                "p53": {
+                    "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
+                    "description": "免疫組織化学、MSI検査、NGSやパネルを含む遺伝子検査など、方法にかかわらず判断できる範囲で入力する。",
+                    "enum": [
+                        "野生型",
+                        "過剰発現",
+                        "完全陰性",
+                        "不明"                                               
+                    ]
+                }
+            }
+        },
         "腹水細胞診": {
             "type": "string",
             "enum": [
@@ -13,6 +55,9 @@
                 "陰性",
                 "未施行",
                 "不明"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "筋層浸潤": {
@@ -27,6 +72,9 @@
                         "浸潤＜1/2",
                         "浸潤≧1/2",
                         "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
                     ]
                 },
                 "診断方法": {
@@ -36,6 +84,9 @@
                         "MRI",
                         "CT",
                         "PET/CT"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
                     ]
                 },
                 "筋層の厚さ": {
@@ -139,14 +190,14 @@
         "/schema/evaluations/colposcopy",
         "/schema/evaluations/hysteroscopy",
         "/schema/evaluations/cystoscopy",
-        "/schema/evaluation/colonoscopy",
-        "/schema/evaluation/tumor_markers",
+        "/schema/evaluations/colonoscopy",
+        "/schema/evaluations/tumor_markers",
         "/schema/evaluations/imaging",
         "/schema/evaluations/ascites",
         "/schema/evaluations/pleural_effusion",
-        "/schema/evaluation/immunohistochemistry",
-        "/schema/evaluation/oncogenes",
-        "/schema/evaluation/performance_status",
-        "/schema/evaluation/physical_status"
+        "/schema/evaluations/immunohistochemistry",
+        "/schema/evaluations/oncogenes",
+        "/schema/evaluations/performance_status",
+        "/schema/evaluations/physical_status"
     ]
 }

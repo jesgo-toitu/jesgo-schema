@@ -1,7 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "1.1",
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "type": "object",
     "title": "患者台帳 卵巣がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -24,21 +25,31 @@
             "enum": [
                 "卵巣癌、卵巣境界悪性腫瘍",
                 "卵管癌、卵管境界悪性腫瘍",
+                "卵管・卵巣癌",
                 "腹膜癌",
                 "卵巣・卵管・腹膜（分類不能）"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
-        "STIC": {
-            "description": "漿液性卵管上皮内癌（STIC）の有無",
+        "病変の主座": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
-                "あり",
-                "なし"
+                "卵巣",
+                "卵管",
+                "腹膜",
+                "不明"
             ]
         },
         "初回治療開始日": {
             "type": "string",
             "format": "date",
+            "jesgo:set": "eventdate",
+            "jesgo:inheriteventdate": "inherit",
             "jesgo:get": "initial_treatment",
             "jesgo:tag": "initial_treatment_date",
             "jesgo:required": [
@@ -62,7 +73,9 @@
             "jesgo:required": [
                 "JSOG"
             ]
-        }
+        },
+        "腫瘍登録番号": {},
+        "予後調査": {}
     },
     "if": {
         "properties": {
@@ -84,6 +97,7 @@
             "予後調査": {
                 "type": "object",
                 "description": "予後調査の登録日の入力をもって調査登録実施とします.",
+                "jesgo:ui:subschemastyle": "inline",
                 "properties": {
                     "3年": {
                         "type": "string",
@@ -101,8 +115,8 @@
     },
     "jesgo:ui:subschemastyle": "tab",
     "jesgo:subschema": [
-        "/schema/OV/findings",
         "/schema/OV/staging",
+        "/schema/OV/findings",
         "/schema/OV/pathology",
         "/schema/treatment/initial_treatment"
     ]

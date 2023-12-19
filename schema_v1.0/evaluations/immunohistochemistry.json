@@ -1,0 +1,25 @@
+{
+    "$schema": "../jesgo.json",
+    "$id": "/schema/evaluations/immunohistochemistry",
+    "jesgo:version": "1.0",
+    "jesgo:parentschema": [
+        "/schema/surveillance"
+    ],
+    "jesgo:unique": true,
+    "type": "object",
+    "title": "免疫組織化学",
+    "properties": {
+        "MLH1": {
+            "type": "string"
+        },
+        "MSH2": {
+            "type": "string"
+        },
+        "MSH6": {
+            "type": "string"
+        },
+        "PMS2": {
+            "type": "string"
+        }
+    }
+}

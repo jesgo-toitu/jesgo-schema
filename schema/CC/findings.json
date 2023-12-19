@@ -1,7 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/CC/findings",
-    "jesgo:version": "1.0",
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "jesgo:unique": true,
     "type": "object",
     "title": "診断所見",
@@ -27,7 +28,10 @@
                             "type": "number",
                             "units": "cm"
                         }
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -35,7 +39,10 @@
                         "視触診（内診、コルポスコープ診を含む）",
                         "画像診断",
                         "病理診断"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -48,8 +55,11 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -57,7 +67,10 @@
                         "視触診（内診、コルポスコープ診を含む）",
                         "画像診断",
                         "病理診断"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -70,8 +83,11 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -79,7 +95,10 @@
                         "視触診（内診、コルポスコープ診を含む）",
                         "画像診断",
                         "病理診断"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -92,8 +111,11 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -101,7 +123,10 @@
                         "画像診断",
                         "病理診断",
                         "膀胱鏡"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -114,8 +139,11 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -123,7 +151,10 @@
                         "画像診断",
                         "病理診断",
                         "直腸鏡・大腸鏡"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -136,8 +167,11 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -148,11 +182,14 @@
                         "画像診断―PET/CT",
                         "病理診断",
                         "その他"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
-        "傍大動脈リンパ節": {
+        "傍大動脈リンパ節転移": {
             "type": "object",
             "jesgo:ui:subschemastyle": "inline",
             "properties": {
@@ -161,8 +198,11 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -171,9 +211,11 @@
                         "画像診断―MRI",
                         "画像診断―CT",
                         "画像診断―PET/CT",
-                        "病理診断",
-                        "その他"
-                    ]
+                        "病理診断"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -186,8 +228,11 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
@@ -196,9 +241,11 @@
                         "画像診断―MRI",
                         "画像診断―CT",
                         "画像診断―PET/CT",
-                        "病理診断",
-                        "その他"
-                    ]
+                        "病理診断"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
@@ -211,20 +258,26 @@
                     "enum": [
                         "あり",
                         "なし",
-                        "不明・未評価"
-                    ]
+                        "不明"
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 },
                 "診断方法": {
                     "type": "string",
                     "enum": [
-                        "視診・触診",
+                        "視触診",
                         "画像診断",
                         "病理診断"
-                    ]
+                    ],
+                    "jesgo:required": [
+                        "JSOG"
+                    ]        
                 }
             }
         },
-        "再発リスク": {
+        "術後再発リスク": {
             "type": "string",
             "enum": [
                 "低リスク",
@@ -239,14 +292,14 @@
         "/schema/evaluations/colposcopy",
         "/schema/evaluations/hysteroscopy",
         "/schema/evaluations/cystoscopy",
-        "/schema/evaluation/colonoscopy",
-        "/schema/evaluation/tumor_markers",
+        "/schema/evaluations/colonoscopy",
+        "/schema/evaluations/tumor_markers",
         "/schema/evaluations/imaging",
         "/schema/evaluations/ascites",
         "/schema/evaluations/pleural_effusion",
-        "/schema/evaluation/immunohistochemistry",
-        "/schema/evaluation/oncogenes",
-        "/schema/evaluation/performance_status",
-        "/schema/evaluation/physical_status"
+        "/schema/evaluations/immunohistochemistry",
+        "/schema/evaluations/oncogenes",
+        "/schema/evaluations/performance_status",
+        "/schema/evaluations/physical_status"
     ]
 }

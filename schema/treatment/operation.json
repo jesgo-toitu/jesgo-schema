@@ -1,7 +1,8 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/operation",
-    "jesgo:version": "1.1",
+    "jesgo:version": "2.0",
+    "jesgo:valid": ["2024-01-01"],
     "type": "object",
     "title": "手術療法",
     "jesgo:ui:subschemastyle": "tab",
@@ -10,7 +11,10 @@
             "type": "string",
             "format": "date",
             "jesgo:set": "eventdate",
-            "jesgo:tag": "treatment_surgery"
+            "jesgo:tag": "treatment_surgery",
+            "jesgo:required": [
+                "JSGOE"
+            ]
         },
         "手術時間": {
             "description": "加刀~終刀までの時間(分) もしくは 時:分 で入力",
@@ -24,6 +28,9 @@
                     "type": "string",
                     "pattern": "^([1-9][0-9]?:)?[0-5]?[0-9]$"
                 }
+            ],
+            "jesgo:required": [
+                "JSGOE"
             ]
         },
         "出血量": {
@@ -65,19 +72,47 @@
                 }
             }
         },
+        "術式の選択": {
+            "type": "object",
+            "jesgo:ui:subschemastyle": "inline",
+            "properties": {
+                "様式": {
+                    "type": "string",
+                    "enum": [
+                        "一期的手術",
+                        "二期的手術",
+                        "その他"
+                    ]
+                },
+                "予定手術内容": {
+                    "type": "string",
+                    "description": "術中合併症あるいは術中所見に基づいて、開腹移行をしても、予定されていた術式を選択する。",
+                    "enum": [
+                        "開腹術",
+                        "腹腔鏡手術",
+                        "ロボット手術",
+                        "該当せず"
+                    ]
+                }
+            }
+        },
         "手術完遂度": {
             "type": "string",
+            "description": "試験開腹術の場合は不完全摘出を選択して下さい",
             "enum": [
                 "完全摘出",
                 "不完全摘出（残存腫瘍径が 1cm未満）",
                 "不完全摘出（残存腫瘍径が 1cm～2cm）",
-                "不完全摘出（2cmをこえる）",
-                "不明",
-                "施行せず"
+                "不完全摘出（2cmを超える）",
+                "不明"
             ]
         },
         "合併症の有無": {
             "type": "string",
+            "jesgo:tag": "has_complications",
+            "jesgo:required": [
+                "JSGOE"
+            ],
             "enum": [
                 "なし",
                 "あり"
