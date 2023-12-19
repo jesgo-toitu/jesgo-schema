@@ -131,7 +131,7 @@
                     "type": "string",
                     "format": "date"
                 },
-                "照射内容": {
+                "治療情報": {
                     "type": "string",
                     "oneOf": [
                         {
@@ -158,7 +158,7 @@
                     "description": "1門照射・対向2門照射などの固定照射の場合は単純を選択してください.",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射内容": {
+                            "治療情報": {
                                 "enum": [
                                     "全骨盤照射",
                                     "遠隔転移"    
@@ -176,7 +176,7 @@
                     "type": "string",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射内容": {
+                            "治療情報": {
                                 "enum": [
                                     "腔内照射",
                                     "組織内照射",                                    
@@ -191,7 +191,7 @@
                     "units": "Gy",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射内容": {
+                            "治療情報": {
                                 "enum": [
                                     "全骨盤照射",
                                     "遠隔転移",
@@ -207,7 +207,7 @@
                     "units": "回",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射内容": {
+                            "治療情報": {
                                 "enum": [
                                     "全骨盤照射",
                                     "遠隔転移",
@@ -223,7 +223,7 @@
                     "units": "Gy",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射内容": {
+                            "治療情報": {
                                 "enum": [
                                     "全骨盤照射",
                                     "遠隔転移",
@@ -239,7 +239,7 @@
                     "units": "MBq",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射内容": {
+                            "治療情報": {
                                 "const": "核医学治療"
                             }    
                         }                        
@@ -250,7 +250,7 @@
                     "units": "回",
                     "jesgo:ui:visibleWhen": {
                         "properties": {
-                            "照射内容": {
+                            "治療情報": {
                                 "const": "核医学治療"
                             }    
                         }                        
