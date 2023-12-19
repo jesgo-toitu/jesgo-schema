@@ -1,8 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/chemotherapy",
-    "jesgo:version": "2.1",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:version": "1.2",
     "title": "薬物療法",
     "jesgo:copy": true,
     "type": "object",
@@ -29,10 +28,10 @@
                 "化学療法＋分子標的治療＋免疫チェックポイント阻害剤",
                 "ホルモン治療",
                 "その他の治療"                                
-            ],
+             ],
             "jesgo:required": [
                 "JSOG"
-            ]
+            ] 
         },
         "分子標的治療の種類": {},
         "レジメン名称": {

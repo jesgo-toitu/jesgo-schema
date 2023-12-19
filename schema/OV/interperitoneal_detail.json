@@ -1,8 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/interperitoneal_detail",
-    "jesgo:version": "2.0",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:version": "1.0",
     "type": "object",
     "title": "腹腔内所見詳細",
     "jesgo:unique": true,

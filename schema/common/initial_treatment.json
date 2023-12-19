@@ -1,10 +1,9 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/treatment/initial_treatment",
-    "jesgo:version": "2.0",
+    "jesgo:version": "1.1",
     "type": "object",
     "title": "初回治療",
-    "jesgo:valid": ["2023-09-01"],
     "jesgo:unique": true,
     "properties": {
         "治療サマリー": {

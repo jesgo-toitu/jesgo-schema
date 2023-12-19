@@ -2,7 +2,7 @@
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/findings",
     "jesgo:version": "2.0",
-    "jesgo:valid": ["2023-09-01"],
+    "jesgo:valid": ["2024-01-01"],
     "type": "object",
     "title": "診断所見",
     "jesgo:unique": true,

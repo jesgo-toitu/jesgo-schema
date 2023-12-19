@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/surveillance",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "type": "object",
     "title": "経過・所見",
     "required": [
