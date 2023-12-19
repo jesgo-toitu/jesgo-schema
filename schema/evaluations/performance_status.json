@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/evaluations/performance_status",
-    "jesgo:version": "1.2",
+    "jesgo:version": "1.1",
     "jesgo:parentschema": [
         "/schema/surveillance"
     ],
@@ -32,7 +32,7 @@
                 },
                 {
                     "const": 4,
-                    "title": "4: 全く動けない。<BR/>自分の身の回りのことは全くできない。完全にベッドか椅子で過ごす。"
+                    "title": "4: 全く動けない。自分の身の回りのことは全くできない。完全にベッドか椅子で過ごす。"
                 }
             ]
         }
