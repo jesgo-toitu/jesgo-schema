@@ -13,7 +13,7 @@
         }
     },
     "jesgo:subschema": [
-        "/schema/evaluation/physical_status",
-        "/schema/evaluation/performance_status"
+        "/schema/evaluations/physical_status",
+        "/schema/evaluations/performance_status"
     ]
 }
