@@ -1,7 +1,7 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/OV/root",
-    "jesgo:version": "1.2",
+    "jesgo:version": "1.3",
     "type": "object",
     "title": "患者台帳 卵巣がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
@@ -21,6 +21,9 @@
         },
         "診断": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "卵巣癌、卵巣境界悪性腫瘍",
                 "卵管癌、卵管境界悪性腫瘍",

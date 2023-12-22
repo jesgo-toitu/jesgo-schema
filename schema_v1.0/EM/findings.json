@@ -1,13 +1,16 @@
 {
     "$schema": "../jesgo.json",
     "$id": "/schema/EM/findings",
-    "jesgo:version": "1.0",
+    "jesgo:version": "1.1",
     "jesgo:unique": true,
     "type": "object",
     "title": "診断所見",
     "properties": {
         "腹水細胞診": {
             "type": "string",
+            "jesgo:required": [
+                "JSOG"
+            ],
             "enum": [
                 "陽性",
                 "陰性",
@@ -23,6 +26,9 @@
             "properties": {
                 "所見": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "浸潤なし",
                         "浸潤＜1/2",
@@ -32,6 +38,9 @@
                 },
                 "診断方法": {
                     "type": "string",
+                    "jesgo:required": [
+                        "JSOG"
+                    ],
                     "enum": [
                         "初回手術施行による病理学的診断",
                         "MRI",
