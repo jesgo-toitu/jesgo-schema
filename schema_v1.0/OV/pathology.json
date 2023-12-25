@@ -12,9 +12,6 @@
     "properties": {
         "組織型": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "oneOf": [
                 {
                     "title": "上皮性腫瘍",
@@ -161,6 +158,9 @@
                         "組織型診断保留中"
                     ]
                 }
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "その他組織型": {}

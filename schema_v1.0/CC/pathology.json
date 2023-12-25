@@ -9,9 +9,6 @@
     "properties": {
         "組織型": {
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "oneOf": [
                 {
                     "title": "上皮性腫瘍 (扁平上皮癌)",
@@ -85,6 +82,9 @@
                         "悪性黒色腫"
                     ]
                 }
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "その他組織型": {},

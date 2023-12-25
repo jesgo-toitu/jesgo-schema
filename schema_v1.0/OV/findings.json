@@ -9,13 +9,13 @@
         "漿液性卵管上皮内癌（STIC）": {
             "description": "漿液性卵管上皮内癌（STIC）の有無。<br>SEE-FIMプロトコールないしは、それに準じた検索を行わなかった場合に、「検索せず」を選択する。",
             "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
             "enum": [
                 "なし",
                 "あり",
                 "検索せず"
+            ],
+            "jesgo:required": [
+                "JSOG"
             ]
         },
         "腹水細胞診": {
