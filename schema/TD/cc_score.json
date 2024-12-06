@@ -1,0 +1,177 @@
+{
+    "$schema": "../jesgo.json",
+    "$id": "/schema/TD/cc_Score",
+    "jesgo:version": "1.0",
+    "jesgo:parentschema": [
+        "/schema/TD/staging"
+    ],
+    "jesgo:unique": true,
+    "type": "object",
+    "title": "絨毛癌診断スコア",
+    "description": "PSTT・ETT・奇胎後hCG存続症以外は必須",
+    "properties": {
+        "絨毛癌診断スコア": {
+            "type": "number",
+            "units": "点",
+            "readOnly": true,
+            "calculationType": "sum",
+            "calculationTag": "cc_Score"
+        },
+        "先行妊娠": {
+            "type": "number",
+            "calculationTag": "cc_Score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "胞状奇胎(0点)"
+                },
+                {
+                    "const": 3,
+                    "title": "流産(3点)"
+                },
+                {
+                    "const": 5,
+                    "title": "正期産(5点)"
+                }
+            ]
+        },
+        "潜伏期": {
+            "type": "number",
+            "calculationTag": "cc_Score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "6か月未満(0点)"
+                },
+                {
+                    "const": 4,
+                    "title": "6か月～3年未満(4点)"
+                },
+                {
+                    "const": 5,
+                    "title": "3年以上(5点)"
+                }
+            ]
+        },
+        "原発病巣": {
+            "type": "number",
+            "calculationTag": "cc_Score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "子宮体部・子宮傍結合織・腟(0点)"
+                },
+                {
+                    "const": 3,
+                    "title": "卵管・卵巣(3点)"
+                },
+                {
+                    "const": 4,
+                    "title": "子宮頸部(4点)"
+                },
+                {
+                    "const": 5,
+                    "title": "骨盤外(5点)"
+                }
+            ]
+        },
+        "転移部位": {
+            "type": "number",
+            "calculationTag": "cc_Score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "なし・肺・骨盤内(0点)"
+                },
+                {
+                    "const": 5,
+                    "title": "骨盤外(肺を除く)(5点)"
+                }
+            ]
+        },
+        "肺転移巣": {
+            "type": "object",
+            "jesgo:ui:subschemastyle": "inline",
+            "properties":{
+                "直径": {
+                    "type": "number",
+                    "calculationTag": "cc_Score",
+                    "oneOf": [
+                        {
+                            "const": 0,
+                            "title": "20mm未満(0点)"
+                        },
+                        {
+                            "const": 3,
+                            "title": "20～30mm未満(3点)"
+                        },
+                        {
+                            "const": 5,
+                            "title": "30mm以上(5点)"
+                        }
+                    ]
+                },
+                "大小不同": {
+                    "type": "number",
+                    "calculationTag": "cc_Score",
+                    "oneOf": [
+                        {
+                            "const": 0,
+                            "title": "なし(0点)"
+                        },
+                        {
+                            "const": 4,
+                            "title": "あり(4点)"
+                        }
+                    ]
+                },
+                "個数": {
+                    "type": "number",
+                    "calculationTag": "cc_Score",
+                    "oneOf": [
+                        {
+                            "const": 0,
+                            "title": "20個以下(0点)"
+                        },
+                        {
+                            "const": 5,
+                            "title": "21個以上(5点)"
+                        }
+                    ]
+                }
+            }
+        },
+        "hCG値(mlU/ml)": {
+            "type": "number",
+            "calculationTag": "cc_Score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "10⁶未満(0点)"
+                },
+                {
+                    "const": 1,
+                    "title": "10⁶～10⁷未満(1点)"
+                },
+                {
+                    "const": 3,
+                    "title": "10⁷以上(3点)"
+                }
+            ]
+        },
+        "基礎体温(月経周期)": {
+            "type": "number",
+            "calculationTag": "cc_Score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "不規則・一相性(不規則)(0点)"
+                },
+                {
+                    "const": 5,
+                    "title": "二相性(整調)(5点)"
+                }
+            ]
+        }
+    }
+}

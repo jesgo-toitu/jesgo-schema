@@ -1,0 +1,32 @@
+{
+    "$schema": "../jesgo.json",
+    "$id": "/schema/US/pathology",
+    "jesgo:version": "1.0",
+    "jesgo:unique": true,
+    "type": "object",
+    "title": "組織診断",
+    "properties": {
+        "組織型": {
+            "type": "string",
+            "enum": [
+                "平滑筋肉腫",
+                "類上皮平滑筋肉腫",
+                "類粘液平滑筋肉腫",
+                "低異型度子宮内膜間質肉腫",
+                "高異型度子宮内膜間質肉腫",
+                "未分化子宮肉腫",
+                "横紋筋肉腫",
+                "その他",
+                "不明(採取せず)"
+            ],
+            "jesgo:required": [
+                "JSOG"
+            ]
+        }
+    },
+    "jesgo:childschema": [
+        "/schema/evaluations/immunohistochemistry",
+        "/schema/evaluations/oncogenes",
+        "/schema/record/pathlogy_report"
+    ]
+}
