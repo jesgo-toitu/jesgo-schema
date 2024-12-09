@@ -1,0 +1,169 @@
+{
+    "$schema": "../jesgo.json",
+    "$id": "/schema/TD/figo_score",
+    "jesgo:version": "1.0",
+    "jesgo:parentschema": [
+        "/schema/TD/staging"
+    ],
+    "jesgo:unique": true,
+    "type": "object",
+    "title": "FIGOスコア",
+    "description": "PSTT・ETT以外は必須",
+    "properties": {
+        "FIGOスコア": {
+            "type": "number",
+            "units": "点",
+            "readOnly": true,
+            "calculationType": "sum",
+            "calculationTag": "figo_score"
+        },
+        "年齢": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "40歳未満(0点)"
+                },
+                {
+                    "const": 1,
+                    "title": "40歳以上(1点)"
+                }
+            ]
+        },
+        "先行妊娠": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "胞状奇胎(0点)"
+                },
+                {
+                    "const": 1,
+                    "title": "流産(1点)"
+                },
+                {
+                    "const": 2,
+                    "title": "正期産(2点)"
+                }
+            ]
+        },
+        "先行妊娠からの期間": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "4カ月未満(0点)"
+                },
+                {
+                    "const": 1,
+                    "title": "4カ月～7カ月未満(1点)"
+                },
+                {
+                    "const": 2,
+                    "title": "7カ月～13カ月未満(2点)"
+                },
+                {
+                    "const": 4,
+                    "title": "13か月以上(4点)"
+                }
+            ]
+        },
+        "治療前血中hCG値(mIU/ml)": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "10³未満(0点)"
+                },
+                {
+                    "const": 1,
+                    "title": "10³～10⁴未満(1点)"
+                },
+                {
+                    "const": 2,
+                    "title": "10⁴～10⁵未満(2点)"
+                },
+                {
+                    "const": 4,
+                    "title": "10⁵以上(4点)"
+                }
+            ]
+        },
+        "腫瘍の最大径": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "3㎝未満(0点)"
+                },
+                {
+                    "const": 1,
+                    "title": "3～5㎝未満(1点)"
+                },
+                {
+                    "const": 2,
+                    "title": "5㎝以上(2点)"
+                }
+            ]
+        },
+        "転移部位": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 0,
+                    "title": "肺(0点)"
+                },
+                {
+                    "const": 1,
+                    "title": "脾臓・腎臓(1点)"
+                },
+                {
+                    "const": 2,
+                    "title": "消化管(2点)"
+                },
+                {
+                    "const": 4,
+                    "title": "肝臓・脳(4点)"
+                }
+            ]
+        },
+        "転移の数(個)": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 1,
+                    "title": "1～4個(1点)"
+                },
+                {
+                    "const": 2,
+                    "title": "5～8個(2点)"
+                },
+                {
+                    "const": 4,
+                    "title": "9個以上(4点)"
+                }
+            ]
+        },
+        "効果不良の既往化学療法": {
+            "type": "number",
+            "calculationTag": "figo_score",
+            "oneOf": [
+                {
+                    "const": 2,
+                    "title": "単剤療法(2点)"
+                },
+                {
+                    "const": 4,
+                    "title": "多剤療法(4点)"
+                }
+            ]
+        }
+    }
+}
