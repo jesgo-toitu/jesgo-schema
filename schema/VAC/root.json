@@ -3,7 +3,7 @@
     "$id": "/schema/VAC/root",
     "jesgo:version": "1.0",
     "type": "object",
-    "title": "患者台帳 膣がん",
+    "title": "患者台帳 腟がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
     "jesgo:unique": true,
     "jesgo:parentschema": [
@@ -18,7 +18,7 @@
             "jesgo:required": [
                 "JSOG"
             ],
-            "default": "膣がん",
+            "default": "腟がん",
             "readOnly": true,
             "jesgo:tag": "cancer_major"
         },

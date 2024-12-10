@@ -5,7 +5,7 @@
     "jesgo:unique": true,
     "type": "object",
     "title": "病期診断",
-    "$comment": "膣がんの病期診断.",
+    "$comment": "腟がんの病期診断.",
     "properties": {
         "治療施行状況": {
             "type": "string",
