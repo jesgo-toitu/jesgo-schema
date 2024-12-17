@@ -1,169 +1,169 @@
 {
-    "$schema": "../jesgo.json",
-    "$id": "/schema/UA/staging",
-    "jesgo:version": "1.0",
-    "jesgo:unique": true,
-    "type": "object",
-    "title": "病期診断",
-    "$comment": "子宮腺肉腫の病期診断.",
-    "properties": {
-        "治療施行状況": {
-            "type": "string",
-            "enum": [
-                "初回手術施行例",
-                "術前治療後に手術施行",
-                "手術未施行例",
-                "手術療法、薬物療法、放射線療法を実施せず"
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
-        },
-        "FIGO": {
-            "type": "string",
-            "jesgo:ui:listtype": "suggestlist",
-            "title": "FIGO分類(日産婦2014、FIGO2008)",
-            "jesgo:tag": "figo",
-            "enum": [
-                "Ⅰ期(亜分類不明)",
-                "ⅠA期",
-                "ⅠB期",
-                "ⅠC期",
-                "Ⅱ期(亜分類不明)",
-                "ⅡA期",
-                "ⅡB期",
-                "Ⅲ期(亜分類不明)",
-                "ⅢA期",
-                "ⅢB期",
-                "ⅢC期",
-                "Ⅳ期(亜分類不明)",
-                "ⅣA期",
-                "ⅣB期"
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
-        }
+  "$schema": "../jesgo.json",
+  "$id": "/schema/UA/staging",
+  "jesgo:version": "1.0",
+  "jesgo:unique": true,
+  "type": "object",
+  "title": "病期診断",
+  "$comment": "子宮腺肉腫の病期診断.",
+  "properties": {
+    "治療施行状況": {
+      "type": "string",
+      "enum": [
+        "初回手術施行例",
+        "術前治療後に手術施行",
+        "手術未施行例",
+        "手術療法、薬物療法、放射線療法を実施せず"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
     },
-    "allOf": [
-        {
-            "if": {
-                "properties": {
-                    "治療施行状況": {
-                        "enum": [
-                            "初回手術施行例"
-                        ]
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "pTNM": {
-                        "$ref": "#/$defs/pTNM"
-                    },
-                    "ypTNM": {}
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "治療施行状況": {
-                        "const": "術前治療後に手術施行"
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "pTNM": {},
-                    "ypTNM": {
-                        "$ref": "#/$defs/ypTNM"
-                    }
-                }
-            }
-        }
-    ],
-    "$defs": {
-        "pTNM": {
-            "type": "object",
-            "title": "pTNM分類",
-            "jesgo:ui:subschemastyle": "row",
-            "properties": {
-                "T": {
-                    "$ref": "#/$defs/T"
-                },
-                "N": {
-                    "$ref": "#/$defs/N"
-                },
-                "M": {
-                    "$ref": "#/$defs/M"
-                }
-            }
-        },
-        "ypTNM": {
-            "type": "object",
-            "title": "ypTNM分類",
-            "jesgo:ui:subschemastyle": "row",
-            "properties": {
-                "T": {
-                    "$ref": "#/$defs/T"
-                },
-                "N": {
-                    "$ref": "#/$defs/N"
-                },
-                "M": {
-                    "$ref": "#/$defs/M"
-                }
-            }
-        },
-        "T": {
-            "$id": "#T",
-            "title": "T分類",
-            "type": "string",
+    "FIGO": {
+      "type": "string",
+      "jesgo:ui:listtype": "suggestlist",
+      "title": "FIGO分類(日産婦2014、FIGO2008)",
+      "jesgo:tag": "figo",
+      "enum": [
+        "Ⅰ期（亜分類不明）",
+        "ⅠA期",
+        "ⅠB期",
+        "ⅠC期",
+        "Ⅱ期（亜分類不明）",
+        "ⅡA期",
+        "ⅡB期",
+        "Ⅲ期（亜分類不明）",
+        "ⅢA期",
+        "ⅢB期",
+        "ⅢC期",
+        "Ⅳ期（亜分類不明）",
+        "ⅣA期",
+        "ⅣB期"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "治療施行状況": {
             "enum": [
-                "TX",
-                "T0",
-                "T1",
-                "T1a",
-                "T1b",
-                "T1c",
-                "T2",
-                "T2a",
-                "T2b",
-                "T3",
-                "T3a",
-                "T3b",
-                "T4"
-            ],
-            "jesgo:required": [
-                "JSOG"
+              "初回手術施行例"
             ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "pTNM": {
+            "$ref": "#/$defs/pTNM"
+          },
+          "ypTNM": {}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "治療施行状況": {
+            "const": "術前治療後に手術施行"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "pTNM": {},
+          "ypTNM": {
+            "$ref": "#/$defs/ypTNM"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "pTNM": {
+      "type": "object",
+      "title": "pTNM分類",
+      "jesgo:ui:subschemastyle": "row",
+      "properties": {
+        "T": {
+          "$ref": "#/$defs/T"
         },
         "N": {
-            "$id": "#N",
-            "title": "N分類",
-            "type": "string",
-            "enum": [
-                "所属リンパ節に転移を認めない",
-                "所属リンパ節に転移を認める",
-                "所属リンパ節に転移を判定するための最低必要な検索が行われなかった"
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
+          "$ref": "#/$defs/N"
         },
         "M": {
-            "$id": "#M",
-            "type": "string",
-            "title": "M分類",
-            "enum": [
-                "遠隔転移を認めない",
-                "遠隔転移を認める",
-                "遠隔転移を判定するための最低必要な検索が行われなかった"
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
+          "$ref": "#/$defs/M"
         }
+      }
+    },
+    "ypTNM": {
+      "type": "object",
+      "title": "ypTNM分類",
+      "jesgo:ui:subschemastyle": "row",
+      "properties": {
+        "T": {
+          "$ref": "#/$defs/T"
+        },
+        "N": {
+          "$ref": "#/$defs/N"
+        },
+        "M": {
+          "$ref": "#/$defs/M"
+        }
+      }
+    },
+    "T": {
+      "$id": "#T",
+      "title": "T分類",
+      "type": "string",
+      "enum": [
+        "TX",
+        "T0",
+        "T1",
+        "T1a",
+        "T1b",
+        "T1c",
+        "T2",
+        "T2a",
+        "T2b",
+        "T3",
+        "T3a",
+        "T3b",
+        "T4"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
+    },
+    "N": {
+      "$id": "#N",
+      "title": "N分類",
+      "type": "string",
+      "enum": [
+        "所属リンパ節に転移を認めない",
+        "所属リンパ節に転移を認める",
+        "所属リンパ節に転移を判定するための最低必要な検索が行われなかった"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
+    },
+    "M": {
+      "$id": "#M",
+      "type": "string",
+      "title": "M分類",
+      "enum": [
+        "遠隔転移を認めない",
+        "遠隔転移を認める",
+        "遠隔転移を判定するための最低必要な検索が行われなかった"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
     }
+  }
 }

@@ -1,120 +1,128 @@
 {
-    "$schema": "../jesgo.json",
-    "$id": "/schema/EM/pathology",
-    "jesgo:version": "2.0",
-    "jesgo:valid": ["2024-01-01"],
-    "jesgo:unique": true,
-    "type": "object",
-    "title": "組織診断",
-    "description": "WHO分類2020年",
+  "$schema": "../jesgo.json",
+  "$id": "/schema/EM/pathology",
+  "jesgo:version": "2.0",
+  "jesgo:valid": [
+    "2024-01-01"
+  ],
+  "jesgo:unique": true,
+  "type": "object",
+  "title": "組織診断",
+  "description": "WHO分類2020年",
+  "properties": {
+    "組織型": {
+      "type": "string",
+      "enum": [
+        "類内膜癌",
+        "漿液性癌",
+        "明細胞癌",
+        "混合癌",
+        "未分化癌",
+        "脱分化癌",
+        "癌肉腫",
+        "中腎腺癌",
+        "扁平上皮癌",
+        "粘液性癌，胃/腸型",
+        "中腎様腺癌",
+        "神経内分泌腫瘍グレード1",
+        "神経内分泌腫瘍グレード2",
+        "小細胞神経内分泌癌",
+        "大細胞神経内分泌癌",
+        "混合型神経内分泌癌",
+        "混合型小細胞神経内分泌癌",
+        "混合型大細胞神経内分泌癌",
+        "その他",
+        "採取せず"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
+    },
+    "その他組織型": {},
+    "組織学的異型度": {
+      "type": "string",
+      "enum": [
+        "Grade1",
+        "Grade2",
+        "Grade3",
+        "異型度評価の対象に含まれない",
+        "不明"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
+    },
+    "脈管侵襲": {
+      "type": "string",
+      "jesgo:required": [
+        "JSOG"
+      ],
+      "enum": [
+        "なし",
+        "限局的（focal）",
+        "広範囲（extensive/substantial）"
+      ]
+    },
+    "分子遺伝学的プロファイル": {
+      "type": "object",
+      "jesgo:ui:subschemastyle": "inline",
+      "properties": {
+        "POLE変異": {
+          "type": "string",
+          "jesgo:required": [
+            "JSOG"
+          ],
+          "enum": [
+            "あり",
+            "なし",
+            "不明"
+          ]
+        },
+        "MMR/MSI": {
+          "type": "string",
+          "jesgo:required": [
+            "JSOG"
+          ],
+          "enum": [
+            "欠損/不安定",
+            "保持/安定",
+            "不明"
+          ]
+        },
+        "p53": {
+          "type": "string",
+          "jesgo:required": [
+            "JSOG"
+          ],
+          "description": "免疫組織化学、MSI検査、NGSやパネルを含む遺伝子検査など、方法にかかわらず判断できる範囲で入力する。",
+          "enum": [
+            "野生型",
+            "過剰発現",
+            "完全陰性",
+            "不明"
+          ]
+        }
+      }
+    }
+  },
+  "if": {
     "properties": {
-        "組織型": {
-            "type": "string",
-            "enum": [
-                "類内膜癌",
-                "漿液性癌",
-                "明細胞癌",
-                "混合癌",
-                "未分化癌",
-                "脱分化癌",
-                "癌肉腫",
-                "中腎腺癌",
-                "扁平上皮癌",
-                "粘液性癌，胃/腸型",
-                "中腎様腺癌",
-                "神経内分泌腫瘍グレード1",
-                "神経内分泌腫瘍グレード2",
-                "小細胞神経内分泌癌",
-                "大細胞神経内分泌癌",
-                "混合型神経内分泌癌",
-                "混合型小細胞神経内分泌癌",
-                "混合型大細胞神経内分泌癌",
-                "その他",
-                "採取せず"
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
-        },
-        "その他組織型": {},
-        "組織学的異型度": {
-            "type": "string",
-            "enum": ["Grade 1", "Grade 2", "Grade 3", "異型度評価の対象に含まれない", "不明"],
-            "jesgo:required": [
-                "JSOG"
-            ]
-        },
-        "脈管侵襲": {
-            "type": "string",
-            "jesgo:required": [
-                "JSOG"
-            ],
-            "enum": [
-                "なし",
-                "限局的(focal)",
-                "広範囲(extensive/substantial)"
-            ]
-        },
-        "分子遺伝学的プロファイル": {
-            "type": "object",
-            "jesgo:ui:subschemastyle": "inline",
-            "properties": {
-                "POLE変異": {
-                    "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
-                    "enum": [
-                        "あり",
-                        "なし",
-                        "不明"                        
-                    ]
-                },
-                "MMR/MSI": {
-                    "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
-                    "enum": [
-                        "欠損/不安定",
-                        "保持/安定",
-                        "不明"                        
-                    ]
-                },
-                "p53": {
-                    "type": "string",
-                    "jesgo:required": [
-                        "JSOG"
-                    ],
-                    "description": "免疫組織化学、MSI検査、NGSやパネルを含む遺伝子検査など、方法にかかわらず判断できる範囲で入力する。",
-                    "enum": [
-                        "野生型",
-                        "過剰発現",
-                        "完全陰性",
-                        "不明"                                               
-                    ]
-                }
-            }
-        }
-    },
-    "if": {
-        "properties": {
-            "組織型": {
-                "const": "その他"
-            }
-        }
-    },
-    "then": {
-        "properties": {
-            "その他組織型": {
-                "type": "string",
-                "jesgo:ui:textarea": 1
-            }
-        }
-    },
-    "jesgo:childschema": [
-        "/schema/evaluations/immunohistochemistry",
-        "/schema/evaluations/oncogenes",
-        "/schema/record/pathlogy_report"
-    ]
+      "組織型": {
+        "const": "その他"
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "その他組織型": {
+        "type": "string",
+        "jesgo:ui:textarea": 1
+      }
+    }
+  },
+  "jesgo:childschema": [
+    "/schema/evaluations/immunohistochemistry",
+    "/schema/evaluations/oncogenes",
+    "/schema/record/pathlogy_report"
+  ]
 }

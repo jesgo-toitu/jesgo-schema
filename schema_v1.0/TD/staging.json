@@ -1,55 +1,55 @@
 {
-    "$schema": "../jesgo.json",
-    "$id": "/schema/TD/staging",
-    "jesgo:version": "1.0",
-    "jesgo:unique": true,
-    "type": "object",
-    "title": "病期診断",
-    "$comment": "絨毛性疾患の病期診断.",
-    "properties": {
-        "病理組織診断": {
-            "type": "string",
-            "oneOf": [
-                {
-                    "title": "病理組織診断あり",
-                    "enum": [
-                        "侵入胞状奇胎(侵入奇胎)",
-                        "絨毛癌",
-                        "PSTT(胎盤部トロホブラスト腫瘍)",
-                        "ETT(類上皮性トロホブラスト腫瘍)"                      
-                    ]
-                },
-                {
-                    "title": "病理組織診断なし",
-                    "enum": [
-                        "奇胎後hCG存続症",
-                        "臨床的侵入奇胎(絨毛癌診断スコア0～4点)",
-                        "臨床的絨毛癌(絨毛癌診断スコア5点以上)"
-                    ]
-                }
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
+  "$schema": "../jesgo.json",
+  "$id": "/schema/TD/staging",
+  "jesgo:version": "1.0",
+  "jesgo:unique": true,
+  "type": "object",
+  "title": "病期診断",
+  "$comment": "絨毛性疾患の病期診断.",
+  "properties": {
+    "病理組織診断": {
+      "type": "string",
+      "oneOf": [
+        {
+          "title": "病理組織診断あり",
+          "enum": [
+            "侵入胞状奇胎（侵入奇胎）",
+            "絨毛癌",
+            "PSTT（胎盤部トロホブラスト腫瘍）",
+            "ETT（類上皮性トロホブラスト腫瘍）"
+          ]
         },
-        "FIGO": {
-            "type": "string",
-            "jesgo:ui:listtype": "suggestlist",
-            "title": "FIGO 2000 stage",
-            "jesgo:tag": "figo",
-            "enum": [
-                "Ⅰ期: 病巣は子宮に限局",
-                "Ⅱ期: 病巣が子宮外に進展、ただし付属器、腟、広靭帯に限局している",
-                "Ⅲ期: 肺転移の存在、ただし内性器の病巣の有無は問わない",
-                "Ⅳ期: その他の部位への転移の存在"
-            ],
-            "jesgo:required": [
-                "JSOG"
-            ]
+        {
+          "title": "病理組織診断なし",
+          "enum": [
+            "奇胎後hCG存続症",
+            "臨床的侵入奇胎（絨毛癌診断スコア0～4点）",
+            "臨床的絨毛癌（絨毛癌診断スコア5点以上）"
+          ]
         }
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
     },
-    "jesgo:childschema": [
-        "/schema/TD/cc_score",
-        "/schema/TD/figo_score"
-    ]
+    "FIGO": {
+      "type": "string",
+      "jesgo:ui:listtype": "suggestlist",
+      "title": "FIGO 2000 stage",
+      "jesgo:tag": "figo",
+      "enum": [
+        "Ⅰ期：病巣は子宮に限局",
+        "Ⅱ期：病巣が子宮外に進展、ただし付属器、腟、広靭帯に限局している",
+        "Ⅲ期：肺転移の存在、ただし内性器の病巣の有無は問わない",
+        "Ⅳ期：その他の部位への転移の存在"
+      ],
+      "jesgo:required": [
+        "JSOG"
+      ]
+    }
+  },
+  "jesgo:childschema": [
+    "/schema/TD/cc_score",
+    "/schema/TD/figo_score"
+  ]
 }
