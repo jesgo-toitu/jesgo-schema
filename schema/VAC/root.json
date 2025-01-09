@@ -92,7 +92,7 @@
     "jesgo:subschema": [
         "/schema/VAC/staging",
         "/schema/VAC/pathology",
-        "/schema/treatment/initial_treatment"
+        "/schema/treatment/initial_treatment_main_selector"
     ],
     "jesgo:childschema": [
         "/schema/evaluations/cervix"
