@@ -25,21 +25,21 @@
             "title": "FIGO分類(日産婦2014、FIGO2008)",
             "jesgo:tag": "figo",
             "enum": [
-                "Ⅰ期(亜分類不明)",
+                "Ⅰ期（亜分類不明）",
                 "ⅠA期",
                 "ⅠB期",
                 "ⅠC期",
-                "Ⅱ期(亜分類不明)",
+                "Ⅱ期（亜分類不明）",
                 "ⅡA期",
                 "ⅡB期",
-                "Ⅲ期(亜分類不明)",
+                "Ⅲ期（亜分類不明）",
                 "ⅢA期",
                 "ⅢB期",
                 "ⅢC期",
-                "Ⅳ期(亜分類不明)",
+                "Ⅳ期（亜分類不明）",
                 "ⅣA期",
                 "ⅣB期"
-            ],
+              ],
             "jesgo:required": [
                 "JSOG"
             ]
@@ -61,6 +61,7 @@
                     "pTNM": {
                         "$ref": "#/$defs/pTNM"
                     },
+                    "cTNM": {},
                     "ypTNM": {}
                 }
             }
@@ -69,17 +70,41 @@
             "if": {
                 "properties": {
                     "治療施行状況": {
-                        "const": "術前治療後に手術施行"
+                        "enum": [
+                            "手術未施行例",
+                            "手術療法、薬物療法、放射線療法を実施せず"
+                        ]
                     }
                 }
             },
             "then": {
                 "properties": {
                     "pTNM": {},
-                    "ypTNM": {
-                        "$ref": "#/$defs/ypTNM"
-                    }
+                    "cTNM": {
+                        "$ref": "#/$defs/cTNM"
+                    },
+                    "ypTNM": {}
                 }
+            }
+        },
+        {
+            "if": {
+              "properties": {
+                "治療施行状況": {
+                  "const": "術前治療後に手術施行"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "pTNM": {},
+                "cTNM": {
+                    "$ref": "#/$defs/cTNM"
+                },
+                "ypTNM": {
+                    "$ref": "#/$defs/ypTNM"
+                }
+              }
             }
         }
     ],
@@ -100,9 +125,9 @@
                 }
             }
         },
-        "ypTNM": {
+        "cTNM": {
             "type": "object",
-            "title": "ypTNM分類",
+            "title": "cTNM分類",
             "jesgo:ui:subschemastyle": "row",
             "properties": {
                 "T": {
@@ -114,6 +139,22 @@
                 "M": {
                     "$ref": "#/$defs/M"
                 }
+            }
+        },
+        "ypTNM": {
+            "type": "object",
+            "title": "ypTNM分類",
+            "jesgo:ui:subschemastyle": "row",
+            "properties": {
+              "T": {
+                "$ref": "#/$defs/T"
+              },
+              "N": {
+                "$ref": "#/$defs/N"
+              },
+              "M": {
+                "$ref": "#/$defs/M"
+              }
             }
         },
         "T": {
