@@ -1,10 +1,7 @@
 {
   "$schema": "../jesgo.json",
   "$id": "/schema/treatment/operation/detailed",
-  "jesgo:version": "2.0",
-  "jesgo:valid": [
-    "2024-01-01"
-  ],
+  "jesgo:version": "2.1",
   "type": "object",
   "title": "手術療法 詳細",
   "properties": {
@@ -195,6 +192,7 @@
   ],
   "jesgo:childschema": [
     "/schema/treatment/operation_adverse_events",
-    "/schema/treatment/blood_transfusion"
+    "/schema/treatment/blood_transfusion",
+    "/schema/treatment/sentinel"
   ]
 }
