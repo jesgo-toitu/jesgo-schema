@@ -1,0 +1,244 @@
+{
+  "$schema": "../jesgo.json",
+  "$id": "/schema/treatment/sentinel",
+  "jesgo:version": "1.0",
+  "type": "object",
+  "title": "センチネル詳細",
+  "jesgo:unique": true,
+  "properties": {
+    "トレーサー種類(詳細)": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sentineldetail"
+      }
+    },
+    "センチネル手術内容": {
+      "type": "string",
+      "enum": [
+        "Mapping手術",
+        "Navigation手術"
+      ]
+    },
+    "センチネル同定部位": {
+      "type": "array",
+      "jesgo:ui:listtype": "buttons",
+      "items": {
+        "type": "string",
+        "enum": [
+          "傍大動脈リンパ節",
+          "右骨盤内リンパ節",
+          "左骨盤内リンパ節"
+        ]
+      }
+    },
+    "生検リンパ節個数": {
+      "type": "integer"
+    },
+    "診断結果": {
+      "type": "object",
+      "jesgo:ui:subschemastyle": "inline",
+      "properties": {
+        "迅速提出有無": {
+          "type": "string",
+          "enum": [
+            "なし",
+            "OSNA法（ワンステップ核酸増幅法）",
+            "あり"
+          ]
+        },
+        "迅速診断結果": {
+          "description": "最も強い所見を１つ入力してください",
+          "type": "string",
+          "enum": [
+            "陰性",
+            "遊離癌細胞（ITC）",
+            "微小転移（micrometastasis）",
+            "肉眼的転移（macrometastasis）"
+          ]
+        },
+        "永久診断結果": {
+          "description": "最も強い所見を１つ入力してください",
+          "type": "string",
+          "enum": [
+            "陰性",
+            "遊離癌細胞（ITC）",
+            "微小転移（micrometastasis）",
+            "肉眼的転移（macrometastasis）"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sentineldetail": {
+      "$id": "#sentineldetail",
+      "type": "object",
+      "jesgo:ui:subschemastyle": "inline",
+      "properties": {
+        "トレーサー種類": {
+          "type": "string",
+          "enum": [
+            "RI（放射性同位元素）",
+            "蛍光法（ICG）",
+            "（青）色素法"
+          ]
+        },
+        "詳細 RI": {
+          "title": "詳細",
+          "type": "string",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "RI（放射性同位元素）"
+                ]
+              }
+            }
+          },
+          "enum": [
+            "テクネフチン酸",
+            "その他"
+          ]
+        },
+        "詳細 蛍光法(ICG)": {
+          "title": "詳細",
+          "type": "string",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "蛍光法（ICG）"
+                ]
+              }
+            }
+          },
+          "enum": [
+            "ICG",
+            "その他"
+          ]
+        },
+        "詳細 (青)色素法": {
+          "title": "詳細",
+          "type": "string",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "（青）色素法"
+                ]
+              }
+            }
+          },
+          "enum": [
+            "インジゴカルミン",
+            "パテントブルー",
+            "その他"
+          ]
+        },
+        "トレーサー投与タイミング": {
+          "type": "string",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "RI（放射性同位元素）",
+                  "蛍光法（ICG）",
+                  "（青）色素法"
+                ]
+              }
+            }
+          },
+          "enum": [
+            "術前",
+            "術中"
+          ]
+        },
+        "トレーサー投与濃度 蛍光法(ICG)": {
+          "type": "integer",
+          "units": "mg/mlとして",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "蛍光法（ICG）"
+                ]
+              }
+            }
+          }
+        },
+        "トレーサー投与濃度 (青)色素法": {
+          "type": "integer",
+          "units": "mg/mlとして",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "（青）色素法"
+                ]
+              }
+            }
+          }
+        },
+        "トレーサー投与量 RI": {
+          "type": "integer",
+          "units": "MBq",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "RI（放射性同位元素）"
+                ]
+              }
+            }
+          }
+        },
+        "トレーサー投与量 蛍光法(ICG)": {
+          "type": "integer",
+          "units": "ml",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "蛍光法（ICG）"
+                ]
+              }
+            }
+          }
+        },
+        "トレーサー投与量 (青)色素法": {
+          "type": "integer",
+          "units": "ml",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "（青）色素法"
+                ]
+              }
+            }
+          }
+        },
+        "投与箇所": {
+          "type": "string",
+          "jesgo:ui:visibleWhen": {
+            "properties": {
+              "トレーサー種類": {
+                "enum": [
+                  "RI（放射性同位元素）",
+                  "蛍光法（ICG）",
+                  "（青）色素法"
+                ]
+              }
+            }
+          },
+          "enum": [
+            "子宮頸部",
+            "子宮体部（底部）",
+            "子宮内腔",
+            "外陰腫瘍周囲"
+          ]
+        }
+      }
+    }
+  }
+}
