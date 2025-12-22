@@ -1,6 +1,6 @@
 {
     "$schema": "../jesgo.json",
-    "$id": "/schema/VUC/staging",
+    "$id": "/schema/VU/staging",
     "jesgo:version": "1.0",
     "jesgo:unique": true,
     "type": "object",
