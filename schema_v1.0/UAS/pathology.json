@@ -1,6 +1,6 @@
 {
     "$schema": "../jesgo.json",
-    "$id": "/schema/VUC/pathology",
+    "$id": "/schema/UAS/pathology",
     "jesgo:version": "1.0",
     "jesgo:unique": true,
     "type": "object",
@@ -9,9 +9,7 @@
         "組織型": {
             "type": "string",
             "enum": [
-                "扁平上皮癌",
-                "腺癌",
-                "腺扁平上皮癌",
+                "腺肉腫",
                 "その他",
                 "不明"
             ],

@@ -1,9 +1,9 @@
 {
     "$schema": "../jesgo.json",
-    "$id": "/schema/VAC/root",
+    "$id": "/schema/VU/root",
     "jesgo:version": "1.0",
     "type": "object",
-    "title": "患者台帳 腟がん",
+    "title": "患者台帳 外陰がん",
     "$comment": "患者レコードの最上位に位置する基本情報.",
     "jesgo:unique": true,
     "jesgo:parentschema": [
@@ -18,7 +18,7 @@
             "jesgo:required": [
                 "JSOG"
             ],
-            "default": "腟がん",
+            "default": "外陰がん",
             "readOnly": true,
             "jesgo:tag": "cancer_major"
         },
@@ -66,7 +66,7 @@
                     "JSOG"
                 ],
                 "type": "string",
-                "pattern": "^VA20[0-9]{2}-[1-9][0-9]*$",
+                "pattern": "^VU20[0-9]{2}-[1-9][0-9]*$",
                 "jesgo:tag": "registration_number"
             },
             "予後調査": {
@@ -90,8 +90,8 @@
     },
     "jesgo:ui:subschemastyle": "tab",
     "jesgo:subschema": [
-        "/schema/VAC/staging",
-        "/schema/VAC/pathology",
+        "/schema/VU/staging",
+        "/schema/VU/pathology",
         "/schema/treatment/initial_treatment_main_selector"
     ],
     "jesgo:childschema": [
