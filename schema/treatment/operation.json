@@ -1,7 +1,7 @@
 {
   "$schema": "../jesgo.json",
   "$id": "/schema/treatment/operation",
-  "jesgo:version": "2.1",
+  "jesgo:version": "3.0",
   "type": "object",
   "title": "手術療法",
   "jesgo:ui:subschemastyle": "tab",
@@ -78,8 +78,8 @@
         "様式": {
           "type": "string",
           "enum": [
-            "一期的手術",
-            "二期的手術",
+            "一回目手術",
+            "二回目手術",
             "その他"
           ]
         },
@@ -97,12 +97,13 @@
     },
     "手術完遂度": {
       "type": "string",
-      "description": "試験開腹術の場合は不完全摘出を選択して下さい",
+      "description": "試験開腹術の場合は「不完全摘出（ほとんどが残存）」を選択して下さい",
       "enum": [
         "完全摘出",
         "不完全摘出（残存腫瘍径が1cm未満）",
         "不完全摘出（残存腫瘍径が1cm～2cm）",
         "不完全摘出（2cmを超える）",
+        "不完全摘出（ほとんどが残存）",
         "不明"
       ]
     },
