@@ -2,6 +2,7 @@
   "$schema": "../jesgo.json",
   "$id": "/schema/treatment/operation_main_selector/detailed_main_selector",
   "jesgo:version": "5.0",
+  "jesgo:valid": [ "2025-01-01" ],
   "type": "object",
   "title": "手術療法 詳細",
   "properties": {
