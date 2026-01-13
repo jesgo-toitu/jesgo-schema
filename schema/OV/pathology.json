@@ -3,7 +3,7 @@
   "$id": "/schema/OV/pathology",
   "jesgo:version": "3.0",
   "jesgo:valid": [
-    "2025-12-22"
+    "2026-01-01"
   ],
   "type": "object",
   "title": "組織診断",

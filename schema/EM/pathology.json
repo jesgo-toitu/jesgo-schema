@@ -3,7 +3,7 @@
   "$id": "/schema/EM/pathology",
   "jesgo:version": "3.0",
   "jesgo:valid": [
-    "2025-12-22"
+    "2026-01-01"
   ],
   "jesgo:unique": true,
   "type": "object",
@@ -66,77 +66,93 @@
     },
     "分子遺伝学的プロファイル": {
       "type": "object",
-      "jesgo:ui:subschemastyle": "inline",
       "properties": {
         "POLE変異": {
-          "type": "string",
-          "jesgo:required": [
-            "JSOG"
-          ],
-          "enum": [
-            "あり",
-            "なし",
-            "不明"
-          ]
+          "type": "object",
+          "jesgo:ui:subschemastyle": "inline",
+          "properties": {
+            "POLE変異": {
+              "type": "string",
+              "jesgo:required": [
+                  "JSOG"
+              ],
+              "enum": [
+                "あり",
+                "なし",
+                "不明"
+              ]
+            },
+            "POLE変異検査方法": {
+              "type": "string",
+              "jesgo:required": [
+                "JSOG"
+              ],
+              "enum": [
+                "サンガー法",
+                "NGS法",
+                "PCR法",
+                "その他"
+              ]
+            }
+          }
         },
-        "POLE変異検査方法": {
-          "type": "string",
-          "jesgo:required": [
-            "JSOG"
-          ],
-          "enum": [
-            "サンガー法",
-            "NGS法",
-            "PCR法",
-            "その他"
-          ]
-        },
-        "MMR/MSI検査結果": {
-          "type": "string",
-          "jesgo:required": [
-            "JSOG"
-          ],
-          "enum": [
-            "欠損/不安定（dMMR/MSI-H）",
-            "保持/安定（pMMR/MSS, MSI-L）",
-            "その他"
-          ]
-        },
-        "MMR/MSI検査方法": {
-          "type": "string",
-          "jesgo:required": [
-            "JSOG"
-          ],
-          "enum": [
-            "MSI検査（PCR法・NGS法）",
-            "MMR-IHC検査（IHC法）",
-            "その他"
-          ]
+        "MMR/MSI検査": {
+          "type": "object",
+          "jesgo:ui:subschemastyle": "inline",
+          "properties": {
+            "MMR/MSI検査結果": {
+              "type": "string",
+              "jesgo:required": [
+                  "JSOG"
+              ],
+              "enum": [
+                "欠損/不安定（dMMR/MSI-H）",
+                "保持/安定（pMMR/MSS, MSI-L）",
+                "不明"
+              ]
+            },
+            "MMR/MSI検査方法": {
+              "type": "string",
+              "jesgo:required": [
+                "JSOG"
+              ],
+              "enum": [
+                "MSI検査（PCR法・NGS法）",
+                "MMR-IHC検査（IHC法）",
+                "その他"
+              ]
+            }
+          }
         },
         "p53": {
-          "type": "string",
-          "jesgo:required": [
-            "JSOG"
-          ],
-          "description": "免疫組織化学、MSI検査、NGSやパネルを含む遺伝子検査など、方法にかかわらず判断できる範囲で入力する。",
-          "enum": [
-            "野生型",
-            "過剰発現",
-            "完全陰性",
-            "不明"
-          ]
-        },
-        "p53検査方法": {
-          "type": "string",
-          "jesgo:required": [
-            "JSOG"
-          ],
-          "description": "複数のバイオマーカー検査を実施した場合には、最終的な根拠とした手法・結果を選択する。",
-          "enum": [
-            "TP53遺伝子変異検査（サンガー法・NGS法）",
-            "p53-IHC検査（IHC法）",
-            "その他"
-          ]
+          "type": "object",
+          "jesgo:ui:subschemastyle": "inline",
+          "properties": {
+            "p53": {
+              "type": "string",
+              "jesgo:required": [
+                  "JSOG"
+              ],
+              "enum": [
+                "野生型",
+                "過剰発現",
+                "完全陰性",
+                "不明"
+              ]
+            },
+            "p53検査方法": {
+              "type": "string",
+              "jesgo:required": [
+                "JSOG"
+              ],
+              "description": "複数のバイオマーカー検査を実施した場合には、最終的な根拠とした手法・結果を選択する。",
+              "enum": [
+                "TP53遺伝子変異検査（サンガー法・NGS法）",
+                "p53-IHC検査（IHC法）",
+                "その他"
+              ]
+            }
+          }
         }
       }
     }
