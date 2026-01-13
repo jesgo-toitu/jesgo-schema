@@ -1,7 +1,7 @@
 {
   "$schema": "../jesgo.json",
   "$id": "/schema/treatment/operation",
-  "jesgo:version": "5.0",
+  "jesgo:version": "3.0",
   "jesgo:valid": [ "2025-01-01" ],
   "type": "object",
   "title": "手術療法",
