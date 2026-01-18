@@ -14,8 +14,87 @@
       "items": {
         "$ref": "#/$defs/procedure"
       }
-    }
+    },
+    "リンパ節郭清アプローチ": {},
+    "腹腔鏡下手術情報": {},
+    "ロボット支援下手術情報": {}
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "実施手術": {
+            "contains": {
+              "properties": {
+                "術式": {
+                  "pattern": "(ロボット支援下|腹腔鏡下).*リンパ節"
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "リンパ節郭清アプローチ": {
+            "type": "string",
+            "enum": [
+              "経腹膜アプローチ",
+              "後腹膜アプローチ"
+            ],
+            "description": "ロボット支援下手術または腹腔鏡手術でリンパ節郭清を行った場合、リンパ節郭清のアプローチ方法を選択してください。"
+          }
+        },
+        "required": [ "リンパ節郭清アプローチ" ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "実施手術": {
+            "contains": {
+              "properties": {
+                "術式": {
+                  "pattern": "腹腔鏡下"
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "腹腔鏡下手術情報": {
+            "$ref": "#/$defs/laparo_information"
+          }
+        },
+        "required": [ "腹腔鏡下手術情報" ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "実施手術": {
+            "contains": {
+              "properties": {
+                "術式": {
+                  "pattern": "ロボット支援下"
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ロボット支援下手術情報": {
+            "$ref": "#/$defs/robot_information"
+          }
+        },
+        "required": [ "ロボット支援下手術情報" ]
+      }
+    }
+  ],
   "$defs": {
     "procedure": {
       "$id": "#procedure",
@@ -205,28 +284,6 @@
             }
           ]
         },
-        "リンパ節郭清アプローチ": {
-          "type": "string",
-          "enum": [
-            "経腹膜アプローチ",
-            "後腹膜アプローチ"
-          ],
-          "default": "経腹膜アプローチ",
-          "jesgo:ui:visibleWhen": {
-            "properties": {
-              "術式": {
-                "enum": [
-                  "腹腔鏡下センチネルリンパ節生検",
-                  "腹腔鏡下骨盤内リンパ節郭清",
-                  "腹腔鏡下傍大動脈リンパ節郭清",
-                  "ロボット支援下センチネルリンパ節生検",
-                  "ロボット支援下骨盤内リンパ節郭清",
-                  "ロボット支援下傍大動脈リンパ節郭清"
-                ] 
-              }
-            }
-          }
-        },
         "自由入力": {
           "type": "string",
           "jesgo:ui:visibleWhen": {
@@ -240,6 +297,55 @@
                 ]
               }
             }
+          }
+        }
+      }
+    },
+    "laparo_information": {
+      "$id": "#laparo_information",
+      "type": "object",
+      "title": "腹腔鏡下手術情報",
+      "properties": {
+        "腹腔鏡アプローチ": {
+          "title": "腹腔鏡下手術アプローチ法",
+          "type": "string",
+          "enum": [
+            "通常ポート配置",
+            "単孔/RPS",
+            "VNOTES",
+            "つり上げ法"
+          ],
+          "description": "手術のアプローチとして中心となったものを選択してください。",
+          "jesgo:required": [ "JSGOE" ]
+        }
+      }
+    },
+    "robot_information": {
+      "$id": "#robot_information",
+      "type": "object",
+      "title": "ロボット支援下手術情報",
+      "properties": {
+        "ロボット使用器材": {
+          "title": "ロボット支援下手術使用器材",
+          "type": "string",
+          "enum": [
+            "DaVinci Si,X,Xi,5",
+            "DaVinci SP",
+            "Hugo",
+            "hinotori",
+            "Saroa"
+          ],
+          "jesgo:required": [ "JSGOE" ]
+        },
+        "ロボットセッティング": {
+          "title": "ロボット支援下手術セッティング",
+          "type": "array",
+          "jesgo:ui:listtype": "buttons",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ダブルバイポーラ"
+            ]
           }
         }
       }
