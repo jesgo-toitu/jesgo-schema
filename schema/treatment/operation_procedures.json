@@ -2,7 +2,7 @@
   "$schema": "../jesgo.json",
   "$id": "/schema/treatment/operation_procedures",
   "jesgo:version": "1.3",
-  "jesgo:valid": [ "2025-01-01" ],
+  "jesgo:valid": [ "2026-01-01" ],
   "jesgo:unique": true,
   "type": "object",
   "title": "実施手術",
