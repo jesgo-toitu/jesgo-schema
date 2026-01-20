@@ -14,6 +14,12 @@
       "items": {
         "$ref": "#/$defs/procedure"
       }
+    },
+    "腹腔鏡下手術情報": {
+      "$ref": "#/$defs/laparo_information"
+    },
+    "ロボット支援下手術情報": {
+      "$ref": "#/$defs/robot_information"
     }
   },
   "$defs": {
@@ -240,6 +246,55 @@
                 ]
               }
             }
+          }
+        }
+      }
+    },
+    "laparo_information": {
+      "$id": "#laparo_information",
+      "type": "object",
+      "title": "腹腔鏡下手術情報",
+      "properties": {
+        "腹腔鏡アプローチ": {
+          "title": "腹腔鏡下手術アプローチ法",
+          "type": "string",
+          "enum": [
+            "通常ポート配置",
+            "単孔/RPS",
+            "VNOTES",
+            "つり上げ法"
+          ],
+          "description": "手術のアプローチとして中心となったものを選択してください。",
+          "jesgo:required": [ "JSGOE" ]
+        }
+      }
+    },
+    "robot_information": {
+      "$id": "#robot_information",
+      "type": "object",
+      "title": "ロボット支援下手術情報",
+      "properties": {
+        "ロボット使用器材": {
+          "title": "ロボット支援下手術使用器材",
+          "type": "string",
+          "enum": [
+            "DaVinci Si,X,Xi,5",
+            "DaVinci SP",
+            "Hugo",
+            "hinotori",
+            "Saroa"
+          ],
+          "jesgo:required": [ "JSGOE" ]
+        },
+        "ロボットセッティング": {
+          "title": "ロボット支援下手術セッティング",
+          "type": "array",
+          "jesgo:ui:listtype": "buttons",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ダブルバイポーラ"
+            ]
           }
         }
       }

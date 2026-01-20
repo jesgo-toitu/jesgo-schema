@@ -194,8 +194,6 @@
   ],
   "jesgo:childschema": [
     "/schema/treatment/operation_adverse_events",
-    "/schema/treatment/laparo_information",
-    "/schema/treatment/robot_information",
     "/schema/treatment/blood_transfusion",
     "/schema/treatment/sentinel"
   ]
