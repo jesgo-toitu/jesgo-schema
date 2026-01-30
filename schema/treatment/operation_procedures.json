@@ -242,7 +242,6 @@
             "経腹膜アプローチ",
             "後腹膜アプローチ"
           ],
-          "default": "経腹膜アプローチ",
           "jesgo:ui:visibleWhen": {
             "properties": {
               "術式": {
