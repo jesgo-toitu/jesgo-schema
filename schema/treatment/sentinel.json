@@ -1,7 +1,7 @@
 {
   "$schema": "../jesgo.json",
   "$id": "/schema/treatment/sentinel",
-  "jesgo:version": "1.0",
+  "jesgo:version": "1.1",
   "type": "object",
   "title": "センチネル詳細",
   "jesgo:unique": true,
@@ -154,7 +154,7 @@
           ]
         },
         "トレーサー投与濃度 蛍光法(ICG)": {
-          "type": "integer",
+          "type": "number",
           "units": "mg/mlとして",
           "jesgo:ui:visibleWhen": {
             "properties": {
@@ -167,7 +167,7 @@
           }
         },
         "トレーサー投与濃度 (青)色素法": {
-          "type": "integer",
+          "type": "number",
           "units": "mg/mlとして",
           "jesgo:ui:visibleWhen": {
             "properties": {
@@ -180,7 +180,7 @@
           }
         },
         "トレーサー投与量 RI": {
-          "type": "integer",
+          "type": "number",
           "units": "MBq",
           "jesgo:ui:visibleWhen": {
             "properties": {
@@ -193,7 +193,7 @@
           }
         },
         "トレーサー投与量 蛍光法(ICG)": {
-          "type": "integer",
+          "type": "number",
           "units": "ml",
           "jesgo:ui:visibleWhen": {
             "properties": {
@@ -206,7 +206,7 @@
           }
         },
         "トレーサー投与量 (青)色素法": {
-          "type": "integer",
+          "type": "number",
           "units": "ml",
           "jesgo:ui:visibleWhen": {
             "properties": {
