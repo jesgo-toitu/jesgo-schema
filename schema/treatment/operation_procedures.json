@@ -302,8 +302,8 @@
           "title": "ロボット支援下手術使用器材",
           "type": "string",
           "enum": [
-            "DaVinci Si,X,Xi,5",
-            "DaVinci SP",
+            "DaVinciSi,X,Xi,5",
+            "DaVinciSP",
             "Hugo",
             "hinotori",
             "Saroa"
